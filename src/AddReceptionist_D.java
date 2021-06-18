@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class AddAdmin_D extends JFrame {
+public class AddReceptionist_D extends JFrame {
 
-    private JPanel PaddAdmin;
+    private JPanel PaddReceptionist;
     private JButton Addbtn;
     private JButton backbtn;
     private JTextField idfld;
@@ -19,12 +19,12 @@ public class AddAdmin_D extends JFrame {
 
 
     public static void main(String[] args) {
-        AddAdmin_D frame = new AddAdmin_D();
+        AddReceptionist_D frame = new AddReceptionist_D();
         frame.setVisible(true);
     }
 
 
-    public AddAdmin_D() {
+    public AddReceptionist_D() {
 
 
         initComponents();
@@ -38,15 +38,15 @@ public class AddAdmin_D extends JFrame {
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
-        PaddAdmin = new JPanel();
-        PaddAdmin.setBackground(new Color(107, 103, 91));
-        setContentPane(PaddAdmin);
-        PaddAdmin.setLayout(null);
+        PaddReceptionist = new JPanel();
+        PaddReceptionist.setBackground(new Color(107, 103, 91));
+        setContentPane(PaddReceptionist);
+        PaddReceptionist.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
         backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
         backgroundlabel.setBounds(681, 11, 601, 365);
-        PaddAdmin.add(backgroundlabel);
+        PaddReceptionist.add(backgroundlabel);
 
 
 
@@ -55,19 +55,19 @@ public class AddAdmin_D extends JFrame {
         idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         idlbl.setForeground(new Color(255,255,255));
         idlbl.setBounds(548, 370, 102, 40);
-        PaddAdmin.add(idlbl);
+        PaddReceptionist.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
         namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         namelbl.setForeground(new Color(255,255,255));
         namelbl.setBounds(548, 424, 102, 42);
-        PaddAdmin.add(namelbl);
+        PaddReceptionist.add(namelbl);
 
         idfld = new JTextField();
         idfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         idfld.setBounds(714, 370, 283, 44);
-        PaddAdmin.add(idfld);
+        PaddReceptionist.add(idfld);
         idfld.setColumns(10);
 
         Addbtn = new JButton("Add");
@@ -76,7 +76,7 @@ public class AddAdmin_D extends JFrame {
             public void actionPerformed(ActionEvent e) {}
         });
         Addbtn.setBounds(714, 645, 116, 40);
-        PaddAdmin.add(Addbtn);
+        PaddReceptionist.add(Addbtn);
 
         backbtn = new JButton("Back");
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -91,55 +91,58 @@ public class AddAdmin_D extends JFrame {
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
         backbtn.setBounds(10, 41, 154, 42);
-        PaddAdmin.add(backbtn);
+        PaddReceptionist.add(backbtn);
 
         JLabel cniclbl = new JLabel("CNIC :");
         cniclbl.setForeground(Color.WHITE);
         cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         cniclbl.setBounds(548, 482, 102, 42);
-        PaddAdmin.add(cniclbl);
+        PaddReceptionist.add(cniclbl);
 
         JLabel emaillbl = new JLabel("Email :");
         emaillbl.setForeground(Color.WHITE);
         emaillbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         emaillbl.setBounds(548, 535, 102, 42);
-        PaddAdmin.add(emaillbl);
+        PaddReceptionist.add(emaillbl);
 
         JLabel passwordlbl = new JLabel("Password :");
         passwordlbl.setForeground(Color.WHITE);
         passwordlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         passwordlbl.setBounds(548, 590, 102, 42);
-        PaddAdmin.add(passwordlbl);
+        PaddReceptionist.add(passwordlbl);
 
         namefld = new JTextField();
         namefld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         namefld.setColumns(10);
         namefld.setBounds(714, 424, 283, 44);
-        PaddAdmin.add(namefld);
+        PaddReceptionist.add(namefld);
 
         cnicfld = new JTextField();
         cnicfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         cnicfld.setColumns(10);
         cnicfld.setBounds(714, 480, 283, 44);
-        PaddAdmin.add(cnicfld);
+        PaddReceptionist.add(cnicfld);
 
         emailfld = new JTextField();
         emailfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         emailfld.setColumns(10);
         emailfld.setBounds(714, 535, 283, 44);
-        PaddAdmin.add(emailfld);
+        PaddReceptionist.add(emailfld);
 
         passwordfld = new JPasswordField();
-        passwordfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         passwordfld.setBounds(714, 590, 283, 44);
-        PaddAdmin.add(passwordfld);
+        PaddReceptionist.add(passwordfld);
 
-        JLabel  Adminlbl = new JLabel("Add Admin");
-        Adminlbl.setForeground(Color.WHITE);
-        Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        Adminlbl.setBounds(728, 254, 210, 40);
-        PaddAdmin.add(Adminlbl);
+
+        JLabel  Receptionistlbl = new JLabel("Add Receptionist");
+        Receptionistlbl.setForeground(Color.WHITE);
+        Receptionistlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Receptionistlbl.setBounds(728, 254, 210, 40);
+        PaddReceptionist.add(Receptionistlbl);
         setLocationRelativeTo(null);
+
+
+
 
         setLocationRelativeTo(null);
 
