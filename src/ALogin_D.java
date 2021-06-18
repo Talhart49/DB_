@@ -2,11 +2,12 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class Login_D extends JFrame {
+public class ALogin_D extends JFrame {
 
     private JPanel Plogin;
     private JButton Log_button;
@@ -16,15 +17,20 @@ public class Login_D extends JFrame {
 
 
     public static void main(String[] args) {
-        Login_D frame = new Login_D();
+        ALogin_D frame = new ALogin_D();
         frame.setVisible(true);
     }
 
 
-    public Login_D() {
+    public ALogin_D() {
 
 
         initComponents();
+
+    }
+
+    public void login_chk(String name,String password){
+
 
     }
 
@@ -36,7 +42,7 @@ public class Login_D extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
         Plogin = new JPanel();
-        Plogin.setBackground(new Color(107, 103, 91));
+        Plogin.setBackground(new Color(49, 46, 41, 15));
         setContentPane(Plogin);
         Plogin.setLayout(null);
 
@@ -76,35 +82,65 @@ public class Login_D extends JFrame {
         Log_button.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Log_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                Sign_Upp s1=new Sign_Upp();
                 String Lname=userfield.getText();
                 String Lpassword=passwordField.getText();
                 if (Lname.isBlank() && Lpassword.isBlank()){
                     JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
                 }
+                Connection connection;
+                try {
+                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+                    PreparedStatement checkCredsQuery = connection.prepareStatement("select * from admin where name = ? and password = ?");
+                    checkCredsQuery.setString(1, Lname);
+                    checkCredsQuery.setString(2, Lpassword);
+                    if (checkCredsQuery.executeUpdate() == 0) {
+                        JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
 
-//                else if (Sign_Upp.Log_in(Lname,Lpassword)){
-////                    dispose();
-////                    OrderG orderG=new OrderG();
-////                    orderG.setVisible(true);
-//                }
-                else {
-                    userfield.setText(" ");
-                    passwordField.setText(" ");
-                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+                        PreparedStatement queryStatement = connection.prepareStatement("select * from admin");
+
+                        ResultSet result = queryStatement.executeQuery();
+                        System.out.println("ID\tName\tphone\tname\tExperonece");
+                        while (result.next()) {
+                            System.out.println(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\t" + result.getString(4) +"\t" + result.getString(5));
+                        }
+
+                    } else {
+                        JOptionPane.showMessageDialog(null,"Found");
+                    }
+
+                } catch (SQLException em) {
+                    em.printStackTrace();
                 }
+
+////                Sign_Upp s1=new Sign_Upp();
+//                String Lname=userfield.getText();
+//                String Lpassword=passwordField.getText();
+//                if (Lname.isBlank() && Lpassword.isBlank()){
+//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+//                }
+//
+////                else if (Sign_Upp.Log_in(Lname,Lpassword)){
+//////                    dispose();
+//////                    OrderG orderG=new OrderG();
+//////                    orderG.setVisible(true);
+////                }
+//                else {
+//                    userfield.setText(" ");
+//                    passwordField.setText(" ");
+//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+//                }
             }
         });
-        Log_button.setBounds(714, 694, 116, 40);
+        Log_button.setBounds(714, 659, 116, 40);
         Plogin.add(Log_button);
 
         backbtn = new JButton("Back");
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                First_Page_D first_page_d=new First_Page_D();
+                first_page_d.setVisible(true);
 
             }
         });
