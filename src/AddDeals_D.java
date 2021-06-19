@@ -16,6 +16,8 @@ public class AddDeals_D extends JFrame {
     private JTextField Descfld;
     private JLabel Dealslbl;
     private JTextField pricefld;
+    private JTextField foodidfld;
+    private JLabel foodidlbl;
 
 
     public static void main(String[] args) {
@@ -108,7 +110,7 @@ public class AddDeals_D extends JFrame {
         Descfld = new JTextField();
         Descfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         Descfld.setColumns(10);
-        Descfld.setBounds(714, 533, 283, 44);
+        Descfld.setBounds(714, 533, 283, 40);
         PaddDeals.add(Descfld);
 
         Dealslbl = new JLabel("Add Deals");
@@ -128,6 +130,18 @@ public class AddDeals_D extends JFrame {
         pricelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
         pricelbl.setBounds(548, 477, 102, 42);
         PaddDeals.add(pricelbl);
+
+        foodidfld = new JTextField();
+        foodidfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        foodidfld.setColumns(10);
+        foodidfld.setBounds(714, 584, 283, 44);
+        PaddDeals.add(foodidfld);
+
+        foodidlbl = new JLabel("Food Item ID :");
+        foodidlbl.setForeground(Color.WHITE);
+        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        foodidlbl.setBounds(548, 585, 116, 40);
+        PaddDeals.add(foodidlbl);
         setLocationRelativeTo(null);
 
 
