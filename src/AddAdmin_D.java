@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class AddAdmin_D extends JFrame {
 
@@ -139,9 +140,27 @@ public class AddAdmin_D extends JFrame {
         Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
         Adminlbl.setBounds(728, 254, 210, 40);
         PaddAdmin.add(Adminlbl);
-        setLocationRelativeTo(null);
+
+
+//        JTable table = new JTable();
+//        table.setModel(new DefaultTableModel(
+//                new Object[][] {
+//                        {null, null, null, null, null},
+//                },
+//                new String[] {
+//                        "Admin ID", "Name", "CNIC", "Email", "Password"
+//                }
+//        ));
+//        table.setSurrendersFocusOnKeystroke(true);
+//        table.setFillsViewportHeight(true);
+//        table.setColumnSelectionAllowed(true);
+//        table.setCellSelectionEnabled(true);
+//        table.setBounds(141, 254, 509, -106);
+//        PaddAdmin.add(table);
 
         setLocationRelativeTo(null);
+
+
 
 
 
