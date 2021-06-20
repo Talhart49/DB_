@@ -169,9 +169,9 @@ public class Admin_Dashboard_D extends JFrame {
 
 
 
-        JLabel Viewlbl = new JLabel("View");
+        JLabel Viewlbl = new JLabel("View/Search");
         Viewlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Viewlbl.setBounds(462, 83, 85, 34);
+        Viewlbl.setBounds(479, 83, 121, 34);
         Padmin_Dashboard.add(Viewlbl);
 
         JButton Vadminbtn = new JButton("Admin");
@@ -180,7 +180,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vadminbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vadminbtn.setBounds(431, 148, 116, 40);
+        Vadminbtn.setBounds(467, 148, 116, 40);
         Padmin_Dashboard.add(Vadminbtn);
 
         JButton Vreceptionistbtn = new JButton("Receptionist");
@@ -189,7 +189,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vreceptionistbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vreceptionistbtn.setBounds(431, 199, 116, 40);
+        Vreceptionistbtn.setBounds(467, 199, 116, 40);
         Padmin_Dashboard.add(Vreceptionistbtn);
 
         JButton Vchefbtn = new JButton("Chef");
@@ -198,7 +198,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vchefbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vchefbtn.setBounds(431, 250, 116, 40);
+        Vchefbtn.setBounds(467, 250, 116, 40);
         Padmin_Dashboard.add(Vchefbtn);
 
         JButton Vwaiterbtn = new JButton("Waiter");
@@ -207,7 +207,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vwaiterbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vwaiterbtn.setBounds(431, 301, 116, 40);
+        Vwaiterbtn.setBounds(467, 301, 116, 40);
         Padmin_Dashboard.add(Vwaiterbtn);
 
         JButton VDeli_Manbtn = new JButton("Delivery Man");
@@ -216,7 +216,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         VDeli_Manbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        VDeli_Manbtn.setBounds(431, 352, 116, 40);
+        VDeli_Manbtn.setBounds(467, 352, 116, 40);
         Padmin_Dashboard.add(VDeli_Manbtn);
 
         JButton Vingredientsbtn = new JButton("Ingredients");
@@ -225,7 +225,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vingredientsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vingredientsbtn.setBounds(431, 403, 116, 40);
+        Vingredientsbtn.setBounds(467, 403, 116, 40);
         Padmin_Dashboard.add(Vingredientsbtn);
 
         JButton Vdealsbtn = new JButton("Deals");
@@ -234,7 +234,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vdealsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vdealsbtn.setBounds(431, 454, 116, 40);
+        Vdealsbtn.setBounds(467, 454, 116, 40);
         Padmin_Dashboard.add(Vdealsbtn);
 
         JButton Vstatisticsbtn = new JButton("Statistics");
@@ -243,7 +243,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vstatisticsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vstatisticsbtn.setBounds(431, 505, 116, 40);
+        Vstatisticsbtn.setBounds(467, 505, 116, 40);
         Padmin_Dashboard.add(Vstatisticsbtn);
 
         JButton Vfood_itemsbtn = new JButton("Food_Items");
@@ -252,7 +252,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vfood_itemsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vfood_itemsbtn.setBounds(431, 556, 116, 40);
+        Vfood_itemsbtn.setBounds(467, 556, 116, 40);
         Padmin_Dashboard.add(Vfood_itemsbtn);
 
         JButton Vcooksbtn = new JButton("Cooks");
@@ -261,7 +261,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vcooksbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vcooksbtn.setBounds(431, 607, 116, 40);
+        Vcooksbtn.setBounds(467, 607, 116, 40);
         Padmin_Dashboard.add(Vcooksbtn);
 
         JButton Vdishbtn = new JButton("Dishes");
@@ -270,119 +270,8 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Vdishbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vdishbtn.setBounds(431, 658, 116, 40);
+        Vdishbtn.setBounds(467, 658, 116, 40);
         Padmin_Dashboard.add(Vdishbtn);
-
-
-
-
-        ///////////////////////////////////
-
-
-
-        JLabel Updatelbl = new JLabel("Update");
-        Updatelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Updatelbl.setBounds(650, 83, 85, 34);
-        Padmin_Dashboard.add(Updatelbl);
-
-        JButton Uadminbtn = new JButton("Admin");
-        Uadminbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Uadminbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Uadminbtn.setBounds(622, 148, 116, 40);
-        Padmin_Dashboard.add(Uadminbtn);
-
-        JButton Ureceptionistbtn = new JButton("Receptionist");
-        Ureceptionistbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Ureceptionistbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ureceptionistbtn.setBounds(622, 199, 116, 40);
-        Padmin_Dashboard.add(Ureceptionistbtn);
-
-        JButton Uchefbtn = new JButton("Chef");
-        Uchefbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Uchefbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Uchefbtn.setBounds(622, 250, 116, 40);
-        Padmin_Dashboard.add(Uchefbtn);
-
-        JButton Uwaiterbtn = new JButton("Waiter");
-        Uwaiterbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Uwaiterbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Uwaiterbtn.setBounds(619, 301, 116, 40);
-        Padmin_Dashboard.add(Uwaiterbtn);
-
-        JButton UDeli_Manbtn = new JButton("Delivery Man");
-        UDeli_Manbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        UDeli_Manbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        UDeli_Manbtn.setBounds(619, 352, 116, 40);
-        Padmin_Dashboard.add(UDeli_Manbtn);
-
-        JButton Uingredientsbtn = new JButton("Ingredients");
-        Uingredientsbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Uingredientsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Uingredientsbtn.setBounds(619, 403, 116, 40);
-        Padmin_Dashboard.add(Uingredientsbtn);
-
-        JButton Udealsbtn = new JButton("Deals");
-        Udealsbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Udealsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Udealsbtn.setBounds(619, 454, 116, 40);
-        Padmin_Dashboard.add(Udealsbtn);
-
-        JButton Ustatisticsbtn = new JButton("Statistics");
-        Ustatisticsbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Ustatisticsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ustatisticsbtn.setBounds(619, 505, 116, 40);
-        Padmin_Dashboard.add(Ustatisticsbtn);
-
-        JButton Ufood_itemsbtn = new JButton("Food_Items");
-        Ufood_itemsbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Ufood_itemsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ufood_itemsbtn.setBounds(619, 556, 116, 40);
-        Padmin_Dashboard.add(Ufood_itemsbtn);
-
-        JButton Ucooksbtn = new JButton("Cooks");
-        Ucooksbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Ucooksbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ucooksbtn.setBounds(619, 607, 116, 40);
-        Padmin_Dashboard.add(Ucooksbtn);
-
-        JButton Udishbtn = new JButton("Dishes");
-        Udishbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        Udishbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Udishbtn.setBounds(619, 658, 116, 40);
-        Padmin_Dashboard.add(Udishbtn);
 
 
 
@@ -391,9 +280,9 @@ public class Admin_Dashboard_D extends JFrame {
 
 
 
-        JLabel Deletelbl = new JLabel("Delete");
+        JLabel Deletelbl = new JLabel("Delete/Update");
         Deletelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Deletelbl.setBounds(831, 83, 85, 34);
+        Deletelbl.setBounds(787, 83, 109, 34);
         Padmin_Dashboard.add(Deletelbl);
 
         JButton Dadminbtn = new JButton("Admin");
@@ -402,7 +291,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dadminbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dadminbtn.setBounds(811, 148, 116, 40);
+        Dadminbtn.setBounds(780, 148, 116, 40);
         Padmin_Dashboard.add(Dadminbtn);
 
         JButton Dreceptionistbtn = new JButton("Receptionist");
@@ -411,7 +300,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dreceptionistbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dreceptionistbtn.setBounds(811, 199, 116, 40);
+        Dreceptionistbtn.setBounds(780, 199, 116, 40);
         Padmin_Dashboard.add(Dreceptionistbtn);
 
         JButton Dchefbtn = new JButton("Chef");
@@ -420,7 +309,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dchefbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dchefbtn.setBounds(811, 250, 116, 40);
+        Dchefbtn.setBounds(780, 250, 116, 40);
         Padmin_Dashboard.add(Dchefbtn);
 
         JButton Dwaiterbtn = new JButton("Waiter");
@@ -429,7 +318,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dwaiterbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dwaiterbtn.setBounds(811, 301, 116, 40);
+        Dwaiterbtn.setBounds(780, 301, 116, 40);
         Padmin_Dashboard.add(Dwaiterbtn);
 
         JButton DDeli_Manbtn = new JButton("Delivery Man");
@@ -438,7 +327,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         DDeli_Manbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        DDeli_Manbtn.setBounds(811, 352, 116, 40);
+        DDeli_Manbtn.setBounds(780, 352, 116, 40);
         Padmin_Dashboard.add(DDeli_Manbtn);
 
         JButton Dingredientsbtn = new JButton("Ingredients");
@@ -447,7 +336,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dingredientsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dingredientsbtn.setBounds(811, 403, 116, 40);
+        Dingredientsbtn.setBounds(780, 403, 116, 40);
         Padmin_Dashboard.add(Dingredientsbtn);
 
         JButton Ddealsbtn = new JButton("Deals");
@@ -456,7 +345,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Ddealsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ddealsbtn.setBounds(811, 454, 116, 40);
+        Ddealsbtn.setBounds(780, 454, 116, 40);
         Padmin_Dashboard.add(Ddealsbtn);
 
         JButton Dstatisticsbtn = new JButton("Statistics");
@@ -465,7 +354,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dstatisticsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dstatisticsbtn.setBounds(811, 505, 116, 40);
+        Dstatisticsbtn.setBounds(780, 505, 116, 40);
         Padmin_Dashboard.add(Dstatisticsbtn);
 
         JButton Dfood_itemsbtn = new JButton("Food_Items");
@@ -474,7 +363,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dfood_itemsbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dfood_itemsbtn.setBounds(811, 556, 116, 40);
+        Dfood_itemsbtn.setBounds(780, 556, 116, 40);
         Padmin_Dashboard.add(Dfood_itemsbtn);
 
         JButton Dcooksbtn = new JButton("Cooks");
@@ -483,7 +372,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Dcooksbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Dcooksbtn.setBounds(811, 607, 116, 40);
+        Dcooksbtn.setBounds(780, 607, 116, 40);
         Padmin_Dashboard.add(Dcooksbtn);
 
         JButton Ddishbtn = new JButton("Dishes");
@@ -492,7 +381,7 @@ public class Admin_Dashboard_D extends JFrame {
             }
         });
         Ddishbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Ddishbtn.setBounds(811, 658, 116, 40);
+        Ddishbtn.setBounds(780, 658, 116, 40);
         Padmin_Dashboard.add(Ddishbtn);
         setLocationRelativeTo(null);
 
