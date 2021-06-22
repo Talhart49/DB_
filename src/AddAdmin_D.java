@@ -2,6 +2,10 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,6 +21,7 @@ public class AddAdmin_D extends JFrame {
     private JTextField cnicfld;
     private JTextField emailfld;
     private JPasswordField passwordfld;
+    public boolean addyes=false;
 
 
     public static void main(String[] args) {
@@ -71,10 +76,60 @@ public class AddAdmin_D extends JFrame {
         PaddAdmin.add(idfld);
         idfld.setColumns(10);
 
+
+
+//
+//            int id= Integer.parseInt(idfld.getText());
+//            String name=namefld.getText();
+//            String
+
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+           public void actionPerformed(ActionEvent e) {
+               try {
+                   if (AddAll.AddAdmin(Integer.parseInt(idfld.getText()), namefld.getText(),cnicfld.getText(),emailfld.getText(),String.valueOf(passwordfld.getPassword()))){
+                       JOptionPane.showMessageDialog(null,"Added");
+                       idfld.setText("");
+                       emailfld.setText("");
+                       namefld.setText("");
+                       cnicfld.setText("");
+                       passwordfld.setText("");
+                   }
+                   else {
+                       JOptionPane.showMessageDialog(null,"Error Enter Again");
+                       idfld.setText("");
+                       emailfld.setText("");
+                       namefld.setText("");
+                       cnicfld.setText("");
+                       passwordfld.setText("");
+
+                   }
+               } catch (SQLException throwables) {
+                   throwables.printStackTrace();
+               }
+//
+//                }if (addyes){
+//                    Connection connection;
+//
+//                    try {
+//                        connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+////                        String query = " insert into admin "
+////                                + " values (?, ?, ?, ?, ?)";
+////                        PreparedStatement preparedStmt = connection.prepareStatement(query);
+////                        preparedStmt.setString (1, idfld.getText());
+////                        preparedStmt.setString(2,namefld.getText());
+////                        preparedStmt.setString (3,cnicfld.getText() );
+////                        preparedStmt.setString(4,emailfld.getText());
+////                        preparedStmt.setString (5,String.valueOf(passwordfld.getPassword()));
+////                        System.out.println(String.valueOf(passwordfld.getPassword()));
+////                        preparedStmt.executeUpdate();
+//                    }
+//                    catch (Exception ev)
+//                    {
+//                        System.out.println(ev);
+//                    }
+            }
         });
         Addbtn.setBounds(714, 645, 116, 40);
         PaddAdmin.add(Addbtn);
