@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -74,7 +75,26 @@ public class AddCustomer_D extends JFrame {
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if( AddAll.Addcustomer (Integer.parseInt(idfld.getText()),namefld.getText(),numberfld.getText()
+                            ,cnicfld.getText(),Integer.parseInt(delimanidfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error Enter Again");
+
+                    }
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                    delimanidfld.setText("");
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
         });
         Addbtn.setBounds(714, 671, 116, 40);
         PaddCustomer.add(Addbtn);

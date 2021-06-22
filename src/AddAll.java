@@ -818,7 +818,7 @@ public class AddAll {
                 count2++;
             }
         }
-        if (count2==0 && cnic.length()==11){
+        if (count2==0 && number.length()==11){
             v3=true;
         }
 
@@ -1032,7 +1032,7 @@ public class AddAll {
 /////////////////////
 
     public static void main(String[] args) throws SQLException {
-        System.out.println(AddReceptionist(0,"Talha","03025754902","1234567890123","123456789"));
+        System.out.println(Addcustomer(0,"Talha","03025754902","1234567890123",2));
     }
 }
 
