@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,8 +15,9 @@ public class AddReceptionist_D extends JFrame {
     private JTextField idfld;
     private JTextField namefld;
     private JTextField cnicfld;
-    private JTextField emailfld;
     private JPasswordField passwordfld;
+    private JLabel Receptionistlbl;
+    private JTextField numberfld;
 
 
     public static void main(String[] args) {
@@ -45,7 +47,7 @@ public class AddReceptionist_D extends JFrame {
 
         JLabel backgroundlabel = new JLabel("");
         backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(681, 11, 601, 365);
+        backgroundlabel.setBounds(925, 11, 357, 220);
         PaddReceptionist.add(backgroundlabel);
 
 
@@ -73,7 +75,31 @@ public class AddReceptionist_D extends JFrame {
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (AddAll.AddReceptionist(Integer.parseInt(idfld.getText()),namefld.getText(),
+                            numberfld.getText(),cnicfld.getText(),String.valueOf(passwordfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+                        idfld.setText("");
+                        namefld.setText("");
+                        numberfld.setText("");
+                        cnicfld.setText("");
+                        passwordfld.setText("");
+
+
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                        idfld.setText("");
+                        namefld.setText("");
+                        numberfld.setText("");
+                        cnicfld.setText("");
+                        passwordfld.setText("");
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
         });
         Addbtn.setBounds(714, 645, 116, 40);
         PaddReceptionist.add(Addbtn);
@@ -96,14 +122,14 @@ public class AddReceptionist_D extends JFrame {
         JLabel cniclbl = new JLabel("CNIC :");
         cniclbl.setForeground(Color.WHITE);
         cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        cniclbl.setBounds(548, 482, 102, 42);
+        cniclbl.setBounds(548, 533, 102, 42);
         PaddReceptionist.add(cniclbl);
 
-        JLabel emaillbl = new JLabel("Email :");
-        emaillbl.setForeground(Color.WHITE);
-        emaillbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        emaillbl.setBounds(548, 535, 102, 42);
-        PaddReceptionist.add(emaillbl);
+        JLabel numberlbl = new JLabel("Contact No :");
+        numberlbl.setForeground(Color.WHITE);
+        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        numberlbl.setBounds(548, 480, 102, 42);
+        PaddReceptionist.add(numberlbl);
 
         JLabel passwordlbl = new JLabel("Password :");
         passwordlbl.setForeground(Color.WHITE);
@@ -120,30 +146,24 @@ public class AddReceptionist_D extends JFrame {
         cnicfld = new JTextField();
         cnicfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         cnicfld.setColumns(10);
-        cnicfld.setBounds(714, 480, 283, 44);
+        cnicfld.setBounds(714, 531, 283, 44);
         PaddReceptionist.add(cnicfld);
-
-        emailfld = new JTextField();
-        emailfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        emailfld.setColumns(10);
-        emailfld.setBounds(714, 535, 283, 44);
-        PaddReceptionist.add(emailfld);
 
         passwordfld = new JPasswordField();
         passwordfld.setBounds(714, 590, 283, 44);
         PaddReceptionist.add(passwordfld);
 
-
-        JLabel  Receptionistlbl = new JLabel("Add Receptionist");
+        Receptionistlbl = new JLabel("Add Receptionist");
         Receptionistlbl.setForeground(Color.WHITE);
         Receptionistlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
         Receptionistlbl.setBounds(728, 254, 210, 40);
         PaddReceptionist.add(Receptionistlbl);
-        setLocationRelativeTo(null);
 
-
-
-
+        numberfld = new JTextField();
+        numberfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        numberfld.setColumns(10);
+        numberfld.setBounds(714, 480, 283, 44);
+        PaddReceptionist.add(numberfld);
         setLocationRelativeTo(null);
 
 

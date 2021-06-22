@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -73,7 +74,31 @@ public class AddOrder_D extends JFrame {
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (AddAll.Addorder(Integer.parseInt(idfld.getText()),descfld.getText(),
+                            Integer.parseInt(waiterIDfld.getText()),Integer.parseInt(delimanidfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+                        idfld.setText("");
+                        descfld.setText("");
+                        waiterIDfld.setText("");
+                        delimanidfld.setText("");
+
+
+
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                        idfld.setText("");
+                        descfld.setText("");
+                        waiterIDfld.setText("");
+                        delimanidfld.setText("");
+
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
         });
         Addbtn.setBounds(714, 611, 116, 40);
         Paddorder.add(Addbtn);

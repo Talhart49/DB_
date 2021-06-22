@@ -82,7 +82,7 @@ public class AddAll {
         boolean v4=false;
         boolean v5=false;
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -133,6 +133,17 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 && v5 ){
+
+            String query = " insert into receptionist "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3,number );
+            preparedStmt.setString(4,cnic);
+            preparedStmt.setString (5, password);
+//            System.out.println(String.valueOf(passwordfld.getPassword()));
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
@@ -147,7 +158,7 @@ public class AddAll {
         boolean v4=false;
         boolean v5=false;
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -197,6 +208,16 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 && v5 ){
+            String query = " insert into Chef "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3,number );
+            preparedStmt.setString(4,cnic);
+            preparedStmt.setInt (5, experience);
+//            System.out.println(String.valueOf(passwordfld.getPassword()));
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
@@ -212,7 +233,7 @@ public class AddAll {
         boolean v4=false;
 
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -257,10 +278,19 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4  ){
+
+            String query = " insert into waiter "
+                    + " values (?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3,number );
+            preparedStmt.setString(4,cnic);
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
-            return true;}
+            return false;}
     }
 
     /////////////////////
@@ -272,7 +302,7 @@ public class AddAll {
         boolean v4=false;
 
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -317,10 +347,18 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 ){
+            String query = " insert into Delivery_Man "
+                    + " values (?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3,number );
+            preparedStmt.setString(4,cnic);
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
-            return true;}
+            return false;}
     }
 /////////////////////
 
@@ -371,10 +409,19 @@ public class AddAll {
 
 
         if(v1 && v2 && v4 && v5 ){
+            String query = " insert into Deals "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(dealid));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3, String.valueOf(price));
+            preparedStmt.setString(4,description);
+            preparedStmt.setString(5, String.valueOf(foodid));
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -386,7 +433,7 @@ public class AddAll {
 
 
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -416,10 +463,17 @@ public class AddAll {
 
 
         if(v1 && v2){
+            String query = " insert into food_items "
+                    + " values (?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.setString (3, String.valueOf(price));
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -432,7 +486,7 @@ public class AddAll {
 
 
 
-        Connection connection;
+        Connection connection = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
@@ -462,10 +516,16 @@ public class AddAll {
 
 
         if(v1 && v2){
+            String query = " insert into ingredients "
+                    + " values (?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2,name);
+            preparedStmt.executeUpdate();
             return true;
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -503,10 +563,21 @@ public class AddAll {
 
 
         if(v1 && v4 && v5 ){
-            return true;
+
+                String query = " insert into Statistics "
+                        + " values (?, ?, ?, ?)";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString (1, String.valueOf(statid));
+                preparedStmt.setString(2, String.valueOf(soldamount));
+                preparedStmt.setString(3, String.valueOf(cus_satis));
+                preparedStmt.setString(4, String.valueOf(foodid));
+                preparedStmt.executeUpdate();
+                return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -540,10 +611,22 @@ public class AddAll {
 
 
         if(v1  && v5 ){
-            return true;
+            {
+
+                String query = " insert into foodItems_Order "
+                        + " values (?, ?)";
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString (1, String.valueOf(Foodid));
+                preparedStmt.setString(2, String.valueOf(orderid));
+                preparedStmt.executeUpdate();
+                return true;
+
+
+            }
+
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -578,10 +661,19 @@ public class AddAll {
 
 
         if(v1  && v5 ){
+
+            String query = " insert into foodItems_homeDelivery "
+                    + " values (?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(Foodid));
+            preparedStmt.setString(2, String.valueOf(hdid));
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -615,10 +707,19 @@ public class AddAll {
 
 
         if(v1  && v5 ){
+
+            String query = " insert into chef_foodItems "
+                    + " values (?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(chefid));
+            preparedStmt.setString(2, String.valueOf(Foodid));
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -652,10 +753,19 @@ public class AddAll {
 
 
         if(v1  && v5 ){
+
+            String query = " insert into foodItems_ingredients "
+                    + " values (?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(Foodid));
+            preparedStmt.setString(2, String.valueOf(ingredid));
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 
     ////////////////////////////
@@ -720,10 +830,23 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 && v5){
+
+            String query = " insert into Customer "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(id));
+            preparedStmt.setString(2, name);
+            preparedStmt.setString(3, number);
+            preparedStmt.setString(4, cnic);
+            preparedStmt.setString(5, String.valueOf(delimanid));
+
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 /////////////////////
 
@@ -766,10 +889,22 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 ){
+
+            String query = " insert into Order "
+                    + " values (?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(orderid));
+            preparedStmt.setString(2, desc);
+            preparedStmt.setString(3, String.valueOf(waiterid));
+            preparedStmt.setString(4, String.valueOf(delimanid));
+
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 /////////////////////
 
@@ -815,10 +950,23 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 ){
+
+            String query = " insert into Home_Delivery "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(homeid));
+            preparedStmt.setString(2, desc);
+            preparedStmt.setString(3, address);
+            preparedStmt.setString(4, String.valueOf(payment));
+            preparedStmt.setString(5, String.valueOf(delimanid));
+
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 /////////////////////
 
@@ -863,10 +1011,23 @@ public class AddAll {
 
 
         if(v1 && v2 && v3 && v4 && v5 ){
+
+            String query = " insert into Feedback "
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, String.valueOf(feedid));
+            preparedStmt.setString(2, String.valueOf(rating));
+            preparedStmt.setString(3, cmnt);
+            preparedStmt.setString(4, String.valueOf(foodid));
+            preparedStmt.setString(5, String.valueOf(customerid));
+
+            preparedStmt.executeUpdate();
             return true;
+
+
         }
         else {
-            return true;}
+            return false;}
     }
 /////////////////////
 
