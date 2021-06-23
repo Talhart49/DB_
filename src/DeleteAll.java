@@ -146,7 +146,7 @@ public class DeleteAll {
             System.out.println(e);
         }
         if (found){
-            String query = " delete from deliveryman where deliveryman_id =?";
+            String query = " delete from delivery_man where deliveryman_id =?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString (1, String.valueOf(id));
             preparedStmt.executeUpdate();
@@ -198,7 +198,7 @@ public class DeleteAll {
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
-            PreparedStatement checkCredsQuery = connection.prepareStatement("select * from food_item where food_id = ?");
+            PreparedStatement checkCredsQuery = connection.prepareStatement("select * from food_items where food_id = ?");
             checkCredsQuery.setString(1, String.valueOf(id));
             if (checkCredsQuery.executeUpdate() != 0) {
                 found=true;
