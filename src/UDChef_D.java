@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -108,11 +109,35 @@ public class UDChef_D extends JFrame {
 
         JButton updatebtn = new JButton("Update");
         updatebtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        updatebtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
         updatebtn.setBounds(184, 377, 110, 30);
         PUD.add(updatebtn);
 
         JButton btnDelete = new JButton("Delete");
         btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnDelete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (DeleteAll.deletechef(Integer.parseInt(Didfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Deleted");
+                        Didfld.setText("");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Not Found");
+                        Didfld.setText("");
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+        });
+
         btnDelete.setBounds(1020, 307, 110, 30);
         PUD.add(btnDelete);
 

@@ -79,19 +79,15 @@ public class AddDeliMan_D extends JFrame {
                     if (AddAll.AddDeliMan(Integer.parseInt(idfld.getText()),namefld.getText(),
                             numberfld.getText(),cnicfld.getText())){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
 
                     }
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
