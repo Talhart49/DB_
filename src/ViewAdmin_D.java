@@ -2,6 +2,10 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -47,10 +51,36 @@ public class ViewAdmin_D extends JFrame {
         backgroundlabel.setBounds(925, 11, 357, 220);
         PViewAdmin.add(backgroundlabel);
 
+        JTextArea StextArea = new JTextArea();
+        StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
+        StextArea.setBackground(Color.white);
+        StextArea.setBounds(783, 507, 542, 62);
+        PViewAdmin.add(StextArea);
+
         Searchbtn = new JButton("Search");
         Searchbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Searchbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                Connection connection = null;
+
+                try {
+                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+                    PreparedStatement checkCredsQuery = connection.prepareStatement("select * from admin where Admin_id = ?");
+                    checkCredsQuery.setString(1, String.valueOf(idfld.getText()));
+                    if (checkCredsQuery.executeUpdate() != 0) {
+                        StextArea.setText(SearchAll.display_search_assc(idfld.getText()));
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Not Found");
+                        idfld.setText("");
+                    }
+                }
+                catch (Exception ev)
+                {
+                    JOptionPane.showMessageDialog(null,"Not Found");
+                    idfld.setText("");
+                }
+            }
         });
         Searchbtn.setBounds(925, 362, 116, 40);
         PViewAdmin.add(Searchbtn);
@@ -93,11 +123,7 @@ public class ViewAdmin_D extends JFrame {
         PViewAdmin.add(idfld);
         idfld.setColumns(10);
 
-        JTextArea StextArea = new JTextArea();
-        StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
-        StextArea.setBackground(Color.GRAY);
-        StextArea.setBounds(783, 507, 542, 62);
-        PViewAdmin.add(StextArea);
+
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(29, 362, 606, 263);
@@ -105,6 +131,7 @@ public class ViewAdmin_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewAdmin());
         setLocationRelativeTo(null);
 
 
