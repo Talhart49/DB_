@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -71,7 +72,26 @@ public class ADDFHD_D extends JFrame {
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (AddAll.AddFHD(Integer.parseInt(foodidfld.getText()),
+                            Integer.parseInt(homeDeliIDfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+
+
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+
+                    }
+                    foodidfld.setText("");
+                    homeDeliIDfld.setText("");
+                } catch (SQLException throwables) {
+                    JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                    foodidfld.setText("");
+                    homeDeliIDfld.setText("");
+                }
+            }
         });
         Addbtn.setBounds(714, 490, 116, 40);
         Paddfhd.add(Addbtn);

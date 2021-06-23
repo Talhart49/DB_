@@ -2,6 +2,9 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -68,9 +71,41 @@ public class AddFeedback_D extends JFrame {
         Foodlbl.setBounds(10, 125, 210, 40);
         PAddFeedback.add(Foodlbl);
 
+
+        Random rand = new Random();
+
+        int feedid = rand.nextInt(1000);
+
         JButton sendbtn = new JButton("Send");
         sendbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                {
+                    try {
+                        if (AddAll.Addfeedback(feedid,Integer.parseInt(ratingfld.getText()),Commentfld.getText(),
+                                Integer.parseInt(foodidfld.getText()),
+                                Integer.parseInt(customeridfld.getText()))){
+
+                            JOptionPane.showMessageDialog(null,"Added");
+
+
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+
+                        }
+                        foodidfld.setText("");
+                        ratingfld.setText("");
+                        Commentfld.setText("");
+                        customeridfld.setText("");
+                    } catch (SQLException throwables) {
+                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                        foodidfld.setText("");
+                        ratingfld.setText("");
+                        Commentfld.setText("");
+                        customeridfld.setText("");
+                    }
+                    System.out.println(feedid);
+                }
             }
         });
         sendbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));

@@ -556,7 +556,7 @@ public class AddAll {
 
         PreparedStatement checkCredsQuery = connection.prepareStatement("select * from food_items where food_id = ?");
         checkCredsQuery.setString(1, String.valueOf(foodid));
-        if (checkCredsQuery.executeUpdate() != 0) {
+        if (checkCredsQuery.executeUpdate() > 0) {
             v5=true;
         }
 
@@ -593,7 +593,7 @@ public class AddAll {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
             PreparedStatement checkCredsQuery = connection.prepareStatement("select * from food_items where food_id = ?");
             checkCredsQuery.setString(1, String.valueOf(Foodid));
-            if (checkCredsQuery.executeUpdate() != 0) {
+            if (checkCredsQuery.executeUpdate() > 0) {
                 v1=true;
             }
         }
@@ -602,9 +602,9 @@ public class AddAll {
             System.out.println(e);
         }
 
-        PreparedStatement checkCredsQuery = connection.prepareStatement("select * from order where order_id = ?");
+        PreparedStatement checkCredsQuery = connection.prepareStatement("select * from orderd where order_id = ?");
         checkCredsQuery.setString(1, String.valueOf(orderid));
-        if (checkCredsQuery.executeUpdate() != 0) {
+        if (checkCredsQuery.executeUpdate() > 0) {
             v5=true;
         }
 
@@ -643,7 +643,7 @@ public class AddAll {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
             PreparedStatement checkCredsQuery = connection.prepareStatement("select * from food_items where food_id = ?");
             checkCredsQuery.setString(1, String.valueOf(Foodid));
-            if (checkCredsQuery.executeUpdate() != 0) {
+            if (checkCredsQuery.executeUpdate() > 0) {
                 v1=true;
             }
         }
@@ -654,7 +654,7 @@ public class AddAll {
 
         PreparedStatement checkCredsQuery = connection.prepareStatement("select * from Home_Delivery where delivery_id = ?");
         checkCredsQuery.setString(1, String.valueOf(hdid));
-        if (checkCredsQuery.executeUpdate() != 0) {
+        if (checkCredsQuery.executeUpdate() > 0) {
             v5=true;
         }
 
@@ -662,7 +662,7 @@ public class AddAll {
 
         if(v1  && v5 ){
 
-            String query = " insert into foodItems_homeDelivery "
+            String query = " insert into fooditems_homedelivery "
                     + " values (?, ?)";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString (1, String.valueOf(Foodid));
@@ -864,7 +864,7 @@ public class AddAll {
 
         try {
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
-            PreparedStatement checkCredsQuery = connection.prepareStatement( "select * from Order where order_id = ?");
+            PreparedStatement checkCredsQuery = connection.prepareStatement( "select * from Orderd where order_id = ?");
             checkCredsQuery.setString(1, String.valueOf(orderid));
             if (checkCredsQuery.executeUpdate() == 0) {
                 v1=true;
@@ -890,7 +890,7 @@ public class AddAll {
 
         if(v1 && v2 && v3 && v4 ){
 
-            String query = " insert into Order "
+            String query = " insert into Orderd "
                     + " values (?, ?, ?, ?)";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString (1, String.valueOf(orderid));
@@ -980,6 +980,7 @@ public class AddAll {
 
 
 
+
         Connection connection = null;
 
         try {
@@ -1032,7 +1033,7 @@ public class AddAll {
 /////////////////////
 
     public static void main(String[] args) throws SQLException {
-        System.out.println(Addcustomer(0,"Talha","03025754902","1234567890123",2));
+//        System.out.println(Addcustomer(0,"Talha","03025754902","1234567890123",2));
     }
 }
 
