@@ -91,7 +91,12 @@ public class AddCustomer_D extends JFrame {
                     cnicfld.setText("");
                     delimanidfld.setText("");
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                    JOptionPane.showMessageDialog(null,"Error Enter Again");
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                    delimanidfld.setText("");
                 }
 
             }
