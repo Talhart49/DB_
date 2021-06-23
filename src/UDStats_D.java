@@ -91,7 +91,7 @@ public class UDStats_D extends JFrame {
         Uidlbl.setBounds(53, 270, 74, 22);
         PUD.add(Uidlbl);
 
-        JLabel Uemaillbl = new JLabel("Updated Email:");
+        JLabel Uemaillbl = new JLabel("Updated Sold Amount:");
         Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Uemaillbl.setBounds(53, 322, 111, 22);
         PUD.add(Uemaillbl);
@@ -109,6 +109,24 @@ public class UDStats_D extends JFrame {
 
         JButton updatebtn = new JButton("Update");
         updatebtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
+
+        updatebtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (UpdateAll.updatestats(Integer.parseInt(Uidfld.getText()), Integer.parseInt(emailfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Updated");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Not Found");
+                    }
+                    Uidfld.setText("");
+                } catch (SQLException throwables) {
+                    JOptionPane.showMessageDialog(null,"Not Found");
+                    Uidfld.setText("");
+                }
+
+            }
+        });
         updatebtn.setBounds(184, 377, 110, 30);
         PUD.add(updatebtn);
 

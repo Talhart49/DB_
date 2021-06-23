@@ -91,7 +91,7 @@ public class UDChef_D extends JFrame {
         Uidlbl.setBounds(53, 270, 74, 22);
         PUD.add(Uidlbl);
 
-        JLabel Uemaillbl = new JLabel("Updated Email:");
+        JLabel Uemaillbl = new JLabel("Updated Number:");
         Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Uemaillbl.setBounds(53, 322, 111, 22);
         PUD.add(Uemaillbl);
@@ -111,7 +111,18 @@ public class UDChef_D extends JFrame {
         updatebtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         updatebtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    if (UpdateAll.updatechef(Integer.parseInt(Uidfld.getText()),emailfld.getText())){
+                        JOptionPane.showMessageDialog(null,"Updated");
+                        Didfld.setText("");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Not Found");
+                        Didfld.setText("");
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
 
             }
         });
