@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -75,7 +76,31 @@ public class AddHomeDeli_D extends JFrame {
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if( AddAll.AddhomeDeli (Integer.parseInt(idfld.getText()),descfld.getText(),addressfld.getText()
+                            , Integer.parseInt(paymentfld.getText()),Integer.parseInt(delimanidfld.getText()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error Enter Again");
+
+                    }
+                    idfld.setText("");
+                    descfld.setText("");
+                    addressfld.setText("");
+                    paymentfld.setText("");
+                    delimanidfld.setText("");
+                } catch (SQLException throwables) {
+                    JOptionPane.showMessageDialog(null,"Error Enter Again");
+                    idfld.setText("");
+                    descfld.setText("");
+                    addressfld.setText("");
+                    paymentfld.setText("");
+                    delimanidfld.setText("");
+                }
+
+            }
         });
         Addbtn.setBounds(714, 650, 116, 40);
         PaddhomeDeli.add(Addbtn);

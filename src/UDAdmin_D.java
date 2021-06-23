@@ -112,9 +112,9 @@ public class UDAdmin_D extends JFrame {
         updatebtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println("hh0");
+
                     if (UpdateAll.updateAdmin(Integer.parseInt(Uidfld.getText()),emailfld.getText())){
-                        System.out.println("hh00");
+
 
                         JOptionPane.showMessageDialog(null,"Updated");
                         Uidfld.setText("");
