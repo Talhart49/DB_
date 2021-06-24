@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 public class SearchAll {
 
-    public static String display_search_assc(String id) {
+    public static String searchAdmin(String id) {
         String s = "";
         Connection connection;
 
@@ -17,8 +17,8 @@ public class SearchAll {
             ResultSet rs = queryStatement.executeQuery();
 
             while (rs.next()) {
-                s += rs.getString(1) + "\t\t\t" + rs.getString(2) + "\t\t\t" +
-                        rs.getString(3) + "\t\t\t" + rs.getString(4) +"\t\t\t" + rs.getString(5) + "\n\n";
+                s += rs.getString(1) + "\t" + rs.getString(2) + "\t" +
+                        rs.getString(3) + "\t" + rs.getString(4) +"\t" + rs.getString(5) + "\n\n";
             }
 
         } catch (Exception e) {

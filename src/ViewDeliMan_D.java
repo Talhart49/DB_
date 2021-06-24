@@ -93,11 +93,15 @@ public class ViewDeliMan_D extends JFrame {
         PViewDeliMan.add(idfld);
         idfld.setColumns(10);
 
+        JScrollPane SscrollPane = new JScrollPane();
+        SscrollPane.setBounds(700, 429, 542, 62);
+        PViewDeliMan.add(SscrollPane);
+
         JTextArea StextArea = new JTextArea();
+        StextArea.setEditable(false);
+        SscrollPane.setViewportView(StextArea);
         StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
         StextArea.setBackground(Color.WHITE);
-        StextArea.setBounds(783, 507, 542, 62);
-        PViewDeliMan.add(StextArea);
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(29, 362, 606, 263);
