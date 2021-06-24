@@ -2,6 +2,9 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -15,6 +18,7 @@ public class ViewDeals_D extends JFrame {
     private JLabel searchlbl;
     private JLabel Dealsidlbl;
     private JTextField idfld;
+    private JTextArea StextArea;
 
 
     public static void main(String[] args) {
@@ -50,7 +54,27 @@ public class ViewDeals_D extends JFrame {
         Searchbtn = new JButton("Search");
         Searchbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Searchbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                Connection connection = null;
+
+                try {
+                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+                    PreparedStatement checkCredsQuery = connection.prepareStatement("select * from deals where deals_id = ?");
+                    checkCredsQuery.setString(1, String.valueOf(idfld.getText()));
+                    if (checkCredsQuery.executeUpdate() != 0) {
+                        StextArea.setText(SearchAll.searchDeals(idfld.getText()));
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Not Found");
+                        idfld.setText("");
+                    }
+                }
+                catch (Exception ev)
+                {
+                    JOptionPane.showMessageDialog(null,"Not Found");
+                    idfld.setText("");
+                }
+            }
         });
         Searchbtn.setBounds(925, 362, 116, 40);
         PViewDeals.add(Searchbtn);
@@ -97,7 +121,7 @@ public class ViewDeals_D extends JFrame {
         SscrollPane.setBounds(700, 429, 542, 62);
         PViewDeals.add(SscrollPane);
 
-        JTextArea StextArea = new JTextArea();
+        StextArea = new JTextArea();
         StextArea.setEditable(false);
         SscrollPane.setViewportView(StextArea);
         StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
