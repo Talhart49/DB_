@@ -70,6 +70,7 @@ public class ViewHomeDeli_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewHomedeli());
         setLocationRelativeTo(null);
 
 

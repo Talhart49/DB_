@@ -70,6 +70,7 @@ public class ViewCustomer_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewcustomer());
         setLocationRelativeTo(null);
 
 

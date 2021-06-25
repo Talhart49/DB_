@@ -132,6 +132,7 @@ public class ViewWaiter_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewWaiter());
         setLocationRelativeTo(null);
 
 

@@ -58,7 +58,7 @@ public class ViewCooks_D extends JFrame {
         backbtn.setBounds(10, 41, 154, 42);
         PViewCooks.add(backbtn);
 
-        JLabel Cookslbl = new JLabel("Food_Ingredients Data");
+        JLabel Cookslbl = new JLabel("Food_Chef Data");
         Cookslbl.setForeground(Color.WHITE);
         Cookslbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
         Cookslbl.setBounds(10, 203, 210, 40);
@@ -70,6 +70,7 @@ public class ViewCooks_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewcooks());
         setLocationRelativeTo(null);
 
 

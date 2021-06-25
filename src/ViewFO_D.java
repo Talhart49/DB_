@@ -70,6 +70,7 @@ public class ViewFO_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewFO());
         setLocationRelativeTo(null);
 
 

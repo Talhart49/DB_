@@ -133,6 +133,7 @@ public class ViewDeliMan_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewDeliman());
         setLocationRelativeTo(null);
 
 

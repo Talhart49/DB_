@@ -133,6 +133,7 @@ public class ViewDeals_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewDeals());
         setLocationRelativeTo(null);
 
 

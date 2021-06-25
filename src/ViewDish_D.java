@@ -58,7 +58,7 @@ public class ViewDish_D extends JFrame {
         backbtn.setBounds(10, 41, 154, 42);
         PViewDish.add(backbtn);
 
-        JLabel Dishlbl = new JLabel("Food_Chef Data");
+        JLabel Dishlbl = new JLabel("Food_Ingredients Data");
         Dishlbl.setForeground(Color.WHITE);
         Dishlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
         Dishlbl.setBounds(10, 203, 210, 40);
@@ -70,6 +70,7 @@ public class ViewDish_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewdish());
         setLocationRelativeTo(null);
 
 

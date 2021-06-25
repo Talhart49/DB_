@@ -70,6 +70,7 @@ public class ViewFHD_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewFHD());
         setLocationRelativeTo(null);
 
 

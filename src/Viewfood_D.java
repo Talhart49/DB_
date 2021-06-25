@@ -133,6 +133,7 @@ public class Viewfood_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewfood());
         setLocationRelativeTo(null);
 
 

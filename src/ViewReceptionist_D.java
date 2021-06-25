@@ -133,6 +133,7 @@ public class ViewReceptionist_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewRecep());
         setLocationRelativeTo(null);
 
 

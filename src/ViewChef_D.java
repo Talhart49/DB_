@@ -133,6 +133,7 @@ public class ViewChef_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewChef());
         setLocationRelativeTo(null);
 
 

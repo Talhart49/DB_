@@ -133,6 +133,7 @@ public class ViewIngredients_D extends JFrame {
 
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
+        VtextArea.setText(ViewAll.viewingreds());
         setLocationRelativeTo(null);
 
 
