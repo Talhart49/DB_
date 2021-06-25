@@ -231,5 +231,82 @@ public class SearchAll {
     //////////////////////////////////
 
 
+    public static String searchcustomer(String id) {
+        String s = "";
+        Connection connection;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+            PreparedStatement queryStatement = connection.prepareStatement("select *" +
+                    " from customer where customer_id=?");
+            queryStatement.setString(1, id);
+            ResultSet rs = queryStatement.executeQuery();
+
+            while (rs.next()) {
+                s += rs.getString(1) + "\t" + rs.getString(2) + "\t" +
+                        rs.getString(3) + "\t" + rs.getString(4)+ "\t" + rs.getString(5) + "\n\n";
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return s;
+    }
+
+
+    //////////////////////////////////
+
+
+    public static String searchhomeDeli(String id) {
+        String s = "";
+        Connection connection;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+            PreparedStatement queryStatement = connection.prepareStatement("select *" +
+                    " from Home_Delivery where delivery_id=?");
+            queryStatement.setString(1, id);
+            ResultSet rs = queryStatement.executeQuery();
+
+            while (rs.next()) {
+                s += rs.getString(1) + "\t" + rs.getString(2) + "\t" +
+                        rs.getString(3) + "\t" + rs.getString(4)+ "\t" + rs.getString(5) + "\n\n";
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return s;
+    }
+
+
+    //////////////////////////////////
+
+
+    public static String searchorder(String id) {
+        String s = "";
+        Connection connection;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+            PreparedStatement queryStatement = connection.prepareStatement("select *" +
+                    " from orderd where order_id=?");
+            queryStatement.setString(1, id);
+            ResultSet rs = queryStatement.executeQuery();
+
+            while (rs.next()) {
+                s += rs.getString(1) + "\t" + rs.getString(2) + "\t" +
+                        rs.getString(3) + "\t" + rs.getString(4)+ "\n\n";
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return s;
+    }
+
+
+    //////////////////////////////////
+
 }
 

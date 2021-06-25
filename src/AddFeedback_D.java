@@ -142,6 +142,7 @@ public class AddFeedback_D extends JFrame {
 
         JTextArea FtextArea = new JTextArea();
         FtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        FtextArea.setText(ViewAll.viewfood());
         FscrollPane.setViewportView(FtextArea);
 
         JScrollPane CscrollPane = new JScrollPane();
@@ -150,6 +151,7 @@ public class AddFeedback_D extends JFrame {
 
         JTextArea CtextArea = new JTextArea();
         CtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        CtextArea.setText(ViewAll.viewcustomer());
         CscrollPane.setViewportView(CtextArea);
 
         JLabel customerlbl = new JLabel("Customer Data");
