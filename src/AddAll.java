@@ -73,6 +73,8 @@ public class AddAll {
         }
     }
 
+    ///////////////////////////////
+
 
 
         public static boolean AddReceptionist(int id,String name,String number,String cnic,String password) throws SQLException {
