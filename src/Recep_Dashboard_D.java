@@ -167,6 +167,9 @@ public class Recep_Dashboard_D extends JFrame {
         JButton Vorderbtn = new JButton("Order");
         Vorderbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ViewOrder_D viewOrder_d=new ViewOrder_D();
+                viewOrder_d.setVisible(true);
             }
         });
         Vorderbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -176,6 +179,9 @@ public class Recep_Dashboard_D extends JFrame {
         JButton VInhousebtn = new JButton("Order_Food");
         VInhousebtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ViewFO_D viewFO_d=new ViewFO_D();
+                viewFO_d.setVisible(true);
             }
         });
         VInhousebtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -185,6 +191,9 @@ public class Recep_Dashboard_D extends JFrame {
         JButton VDeli_foodbtn = new JButton("Delivery_Food");
         VDeli_foodbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ViewFHD_D viewFHD_d=new ViewFHD_D();
+                viewFHD_d.setVisible(true);
             }
         });
         VDeli_foodbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
