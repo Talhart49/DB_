@@ -111,7 +111,7 @@ public class ALogin_D extends JFrame {
                     }
 
                 } catch (SQLException em) {
-                    em.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
                 }
 
 ////                Sign_Upp s1=new Sign_Upp();

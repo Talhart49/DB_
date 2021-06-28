@@ -39,72 +39,91 @@ public class Recep_Dashboard_D extends JFrame {
         Precep_Dashboard.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(973, 11, 309, 93);
-        Precep_Dashboard.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\dashR.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
 
         AHomeDelibtn = new JButton("Home Delivery");
         AHomeDelibtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
         AHomeDelibtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                AddHomeDeli_D addHomeDeli_d=new AddHomeDeli_D();
+                addHomeDeli_d.setVisible(true);
+            }
         });
-        AHomeDelibtn.setBounds(204, 199, 133, 40);
+        AHomeDelibtn.setBounds(204, 265, 133, 29);
         Precep_Dashboard.add(AHomeDelibtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                RLogin_D rLogin_d=new RLogin_D();
+
+                rLogin_d.setVisible(true);
+
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(0, 0, 154, 42);
+        backbtn.setBounds(0, 0, 133, 33);
         Precep_Dashboard.add(backbtn);
 
         JLabel addlbl = new JLabel("Add");
-        addlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        addlbl.setBounds(213, 83, 85, 34);
+        addlbl.setForeground(new Color(255, 255, 255));
+        addlbl.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        addlbl.setBounds(204, 116, 85, 34);
         Precep_Dashboard.add(addlbl);
 
         JButton Acustomerbtn = new JButton("Customer");
         Acustomerbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                AddCustomer_D addCustomer_d =new AddCustomer_D();
+                addCustomer_d.setVisible(true);
             }
         });
         Acustomerbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Acustomerbtn.setBounds(204, 148, 133, 40);
+        Acustomerbtn.setBounds(204, 209, 133, 29);
         Precep_Dashboard.add(Acustomerbtn);
 
         JButton Aorderbtn = new JButton("Order");
         Aorderbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                AddOrder_D addOrder_d=new AddOrder_D();
+                addOrder_d.setVisible(true);
             }
         });
         Aorderbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Aorderbtn.setBounds(204, 250, 133, 40);
+        Aorderbtn.setBounds(204, 316, 133, 29);
         Precep_Dashboard.add(Aorderbtn);
 
         JButton AInhousebtn = new JButton("Order_Food");
         AInhousebtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                AddFO_D addFO_d=new AddFO_D();
+                addFO_d.setVisible(true);
             }
         });
         AInhousebtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        AInhousebtn.setBounds(204, 301, 133, 40);
+        AInhousebtn.setBounds(204, 367, 133, 29);
         Precep_Dashboard.add(AInhousebtn);
 
         JButton ADeli_foodbtn = new JButton("Delivery_Food");
         ADeli_foodbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ADDFHD_D addfhd_d=new ADDFHD_D();
+                addfhd_d.setVisible(true);
             }
         });
         ADeli_foodbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        ADeli_foodbtn.setBounds(204, 352, 133, 40);
+        ADeli_foodbtn.setBounds(204, 418, 133, 29);
         Precep_Dashboard.add(ADeli_foodbtn);
 
 
@@ -116,26 +135,33 @@ public class Recep_Dashboard_D extends JFrame {
 
 
         JLabel Viewlbl = new JLabel("View/Search");
-        Viewlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Viewlbl.setBounds(479, 83, 121, 34);
+        Viewlbl.setForeground(new Color(255, 255, 255));
+        Viewlbl.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        Viewlbl.setBounds(478, 116, 133, 34);
         Precep_Dashboard.add(Viewlbl);
 
         JButton Vcustomerbtn = new JButton("Customer");
         Vcustomerbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ViewCustomer_D viewCustomer_d=new ViewCustomer_D();
+                viewCustomer_d.setVisible(true);
             }
         });
         Vcustomerbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vcustomerbtn.setBounds(467, 148, 133, 40);
+        Vcustomerbtn.setBounds(467, 209, 133, 29);
         Precep_Dashboard.add(Vcustomerbtn);
 
         JButton VHomeDelibtn = new JButton("Home Delivery");
         VHomeDelibtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                ViewHomeDeli_D viewHomeDeli_d=new ViewHomeDeli_D();
+                viewHomeDeli_d.setVisible(true);
             }
         });
         VHomeDelibtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        VHomeDelibtn.setBounds(467, 199, 133, 40);
+        VHomeDelibtn.setBounds(467, 265, 133, 29);
         Precep_Dashboard.add(VHomeDelibtn);
 
         JButton Vorderbtn = new JButton("Order");
@@ -144,7 +170,7 @@ public class Recep_Dashboard_D extends JFrame {
             }
         });
         Vorderbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Vorderbtn.setBounds(467, 250, 133, 40);
+        Vorderbtn.setBounds(467, 316, 133, 29);
         Precep_Dashboard.add(Vorderbtn);
 
         JButton VInhousebtn = new JButton("Order_Food");
@@ -153,7 +179,7 @@ public class Recep_Dashboard_D extends JFrame {
             }
         });
         VInhousebtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        VInhousebtn.setBounds(467, 301, 133, 40);
+        VInhousebtn.setBounds(467, 367, 133, 29);
         Precep_Dashboard.add(VInhousebtn);
 
         JButton VDeli_foodbtn = new JButton("Delivery_Food");
@@ -162,8 +188,12 @@ public class Recep_Dashboard_D extends JFrame {
             }
         });
         VDeli_foodbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        VDeli_foodbtn.setBounds(467, 352, 133, 40);
+        VDeli_foodbtn.setBounds(467, 418, 133, 29);
         Precep_Dashboard.add(VDeli_foodbtn);
+
+        Precep_Dashboard.add(backgroundlabel);
+
+
         setLocationRelativeTo(null);
 
 
