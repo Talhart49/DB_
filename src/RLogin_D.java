@@ -29,10 +29,7 @@ public class RLogin_D extends JFrame {
 
     }
 
-    public void login_chk(String name,String password){
 
-
-    }
 
 
 
@@ -47,55 +44,56 @@ public class RLogin_D extends JFrame {
         Plogin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(681, 11, 601, 365);
-        Plogin.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\loginR.jpg"));
+        backgroundlabel.setBounds(0,0,1370, 749);
+
 
 
 
 
         JLabel user_label = new JLabel("User Name");
         user_label.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        user_label.setForeground(new Color(255,255,255));
-        user_label.setBounds(537, 499, 102, 40);
+        user_label.setForeground(Color.DARK_GRAY);
+        user_label.setBounds(479, 355, 102, 40);
         Plogin.add(user_label);
 
 
         JLabel pass_label = new JLabel("Password");
+        pass_label.setBackground(Color.WHITE);
         pass_label.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        pass_label.setForeground(new Color(255,255,255));
-        pass_label.setBounds(537, 581, 102, 42);
+        pass_label.setForeground(Color.DARK_GRAY);
+        pass_label.setBounds(479, 423, 102, 42);
         Plogin.add(pass_label);
 
         userfield = new JTextField();
         userfield.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        userfield.setBounds(714, 499, 283, 44);
+        userfield.setBounds(618, 355, 283, 44);
         Plogin.add(userfield);
         userfield.setColumns(10);
 
         passwordField = new JPasswordField();
         passwordField.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        passwordField.setBounds(714, 582, 283, 44);
+        passwordField.setBounds(618, 424, 283, 44);
         Plogin.add(passwordField);
 
         Log_button = new JButton("Log_in");
         Log_button.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Log_button.addActionListener(new ActionListener() {
-           public void actionPerformed(ActionEvent e) {
-//                String Lname=userfield.getText();
-//                String Lpassword=passwordField.getText();
-//                if (Lname.isBlank() && Lpassword.isBlank()){
-//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
-//                }
-//                Connection connection;
-//                try {
-//                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
-//                    PreparedStatement checkCredsQuery = connection.prepareStatement("select * from admin where name = ? and password = ?");
-//                    checkCredsQuery.setString(1, Lname);
-//                    checkCredsQuery.setString(2, Lpassword);
-//                    if (checkCredsQuery.executeUpdate() == 0) {
-//                        JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
-//
+            public void actionPerformed(ActionEvent e) {
+                String Lname=userfield.getText();
+                String Lpassword=passwordField.getText();
+                if (Lname.isBlank() && Lpassword.isBlank()){
+                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+                }
+                Connection connection;
+                try {
+                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
+                    PreparedStatement checkCredsQuery = connection.prepareStatement("select * from receptionist where name = ? and password = ?");
+                    checkCredsQuery.setString(1, Lname);
+                    checkCredsQuery.setString(2, Lpassword);
+                    if (checkCredsQuery.executeUpdate() == 0) {
+                        JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
+
 //                        PreparedStatement queryStatement = connection.prepareStatement("select * from admin");
 //
 //                        ResultSet result = queryStatement.executeQuery();
@@ -103,38 +101,39 @@ public class RLogin_D extends JFrame {
 //                        while (result.next()) {
 //                            System.out.println(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\t" + result.getString(4) +"\t" + result.getString(5));
 //                        }
-//
-//                    } else {
-//                        JOptionPane.showMessageDialog(null,"Found");
-//                    }
-//
-//                } catch (SQLException em) {
-//                    em.printStackTrace();
+
+                    } else {
+                        JOptionPane.showMessageDialog(null,"Found");
+                    }
+
+                } catch (SQLException em) {
+                    em.printStackTrace();
+                }
+
+////                Sign_Upp s1=new Sign_Upp();
+//                String Lname=userfield.getText();
+//                String Lpassword=passwordField.getText();
+//                if (Lname.isBlank() && Lpassword.isBlank()){
+//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
 //                }
 //
-//////                Sign_Upp s1=new Sign_Upp();
-////                String Lname=userfield.getText();
-////                String Lpassword=passwordField.getText();
-////                if (Lname.isBlank() && Lpassword.isBlank()){
-////                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+////                else if (Sign_Upp.Log_in(Lname,Lpassword)){
+//////                    dispose();
+//////                    OrderG orderG=new OrderG();
+//////                    orderG.setVisible(true);
 ////                }
-////
-//////                else if (Sign_Upp.Log_in(Lname,Lpassword)){
-////////                    dispose();
-////////                    OrderG orderG=new OrderG();
-////////                    orderG.setVisible(true);
-//////                }
-////                else {
-////                    userfield.setText(" ");
-////                    passwordField.setText(" ");
-////                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
-////                }
+//                else {
+//                    userfield.setText(" ");
+//                    passwordField.setText(" ");
+//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
+//                }
             }
         });
-        Log_button.setBounds(714, 637, 116, 40);
+        Log_button.setBounds(613, 490, 123, 29);
         Plogin.add(Log_button);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -145,9 +144,11 @@ public class RLogin_D extends JFrame {
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
-        backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBackground(Color.DARK_GRAY);
+        backbtn.setBounds(0, 0, 139, 33);
         Plogin.add(backbtn);
+
+        Plogin.add(backgroundlabel);
         setLocationRelativeTo(null);
 
 

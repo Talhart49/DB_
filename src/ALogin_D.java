@@ -47,38 +47,40 @@ public class ALogin_D extends JFrame {
         Plogin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(681, 11, 601, 365);
-        Plogin.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\loginR.jpg"));
+        backgroundlabel.setBounds(0, -51, 1360, 800);
+
 
 
 
 
         JLabel user_label = new JLabel("User Name");
         user_label.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        user_label.setForeground(new Color(255,255,255));
-        user_label.setBounds(537, 553, 102, 40);
+        user_label.setForeground(Color.DARK_GRAY);
+        user_label.setBounds(493, 274, 102, 40);
         Plogin.add(user_label);
 
 
         JLabel pass_label = new JLabel("Password");
         pass_label.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        pass_label.setForeground(new Color(255,255,255));
-        pass_label.setBounds(537, 623, 102, 42);
+        pass_label.setForeground(Color.DARK_GRAY);
+        pass_label.setBounds(493, 346, 102, 42);
         Plogin.add(pass_label);
 
         userfield = new JTextField();
         userfield.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        userfield.setBounds(714, 547, 283, 44);
+        userfield.setBounds(658, 274, 283, 44);
         Plogin.add(userfield);
         userfield.setColumns(10);
 
         passwordField = new JPasswordField();
         passwordField.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        passwordField.setBounds(714, 621, 283, 44);
+        passwordField.setBounds(658, 361, 283, 44);
         Plogin.add(passwordField);
 
         Log_button = new JButton("Log_in");
+        Log_button.setForeground(Color.BLACK);
+        Log_button.setBackground(Color.GRAY);
         Log_button.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Log_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -96,13 +98,13 @@ public class ALogin_D extends JFrame {
                     if (checkCredsQuery.executeUpdate() == 0) {
                         JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
 
-                        PreparedStatement queryStatement = connection.prepareStatement("select * from admin");
-
-                        ResultSet result = queryStatement.executeQuery();
-                        System.out.println("ID\tName\tphone\tname\tExperonece");
-                        while (result.next()) {
-                            System.out.println(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\t" + result.getString(4) +"\t" + result.getString(5));
-                        }
+//                        PreparedStatement queryStatement = connection.prepareStatement("select * from admin");
+//
+//                        ResultSet result = queryStatement.executeQuery();
+//                        System.out.println("ID\tName\tphone\tname\tExperonece");
+//                        while (result.next()) {
+//                            System.out.println(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\t" + result.getString(4) +"\t" + result.getString(5));
+                        //   }
 
                     } else {
                         JOptionPane.showMessageDialog(null,"Found");
@@ -131,10 +133,11 @@ public class ALogin_D extends JFrame {
 //                }
             }
         });
-        Log_button.setBounds(714, 659, 116, 40);
+        Log_button.setBounds(658, 428, 122, 29);
         Plogin.add(Log_button);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -145,9 +148,12 @@ public class ALogin_D extends JFrame {
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
-        backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBackground(Color.DARK_GRAY);
+        backbtn.setBounds(0, 0, 139, 33);
         Plogin.add(backbtn);
+
+        Plogin.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

@@ -38,11 +38,12 @@ public class First_Page_D extends JFrame {
         Plogin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(681, 11, 601, 365);
-        Plogin.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\mainpageR.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 738);
 
-        admin_btn = new JButton("Admin");
+
+        admin_btn = new JButton("ADMIN");
+        admin_btn.setBackground(new Color(179, 141, 141));
         admin_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -50,28 +51,48 @@ public class First_Page_D extends JFrame {
                 aLogin_d.setVisible(true);
             }
         });
-        admin_btn.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        admin_btn.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
-        admin_btn.setBounds(584, 554, 116, 40);
+        admin_btn.setBounds(552, 406, 127, 67);
         Plogin.add(admin_btn);
 
         JButton customer_btn = new JButton("Customer");
+        customer_btn.setBackground(new Color(179, 141, 141));
+//        customer_btn.setForeground();
         customer_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                AddFeedback_D addFeedback_d=new AddFeedback_D();
+                addFeedback_d.setVisible(true);
             }
         });
-        customer_btn.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        customer_btn.setBounds(763, 554, 116, 40);
+        customer_btn.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        customer_btn.setBounds(705, 406, 127, 67);
         Plogin.add(customer_btn);
 
         JButton receptionist_btn = new JButton("Receptionist");
+        receptionist_btn.setBackground(new Color(179, 141, 141));
         receptionist_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
+                RLogin_D rLogin_d=new RLogin_D();
+                rLogin_d.setVisible(true);
             }
         });
-        receptionist_btn.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        receptionist_btn.setBounds(972, 554, 116, 40);
+        receptionist_btn.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        receptionist_btn.setBounds(857, 406, 127, 67);
         Plogin.add(receptionist_btn);
+
+
+        JLabel wholbl = new JLabel("Who Are You..!!!!");
+        wholbl.setIcon(new ImageIcon("F:\\DB I\\DB_project\\whoR.jpg"));
+        wholbl.setForeground(new Color(255, 255, 255));
+        wholbl.setFont(new Font("Tahoma", Font.PLAIN, 26));
+        wholbl.setBounds(552, 219, 435, 129);
+        Plogin.add(wholbl);
+
+        Plogin.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 
