@@ -46,23 +46,24 @@ public class AddFeedback_D extends JFrame {
         PAddFeedback.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PAddFeedback.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                First_Page_D a=new First_Page_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PAddFeedback.add(backbtn);
 
         JLabel Foodlbl = new JLabel("Food  Data");
@@ -109,7 +110,7 @@ public class AddFeedback_D extends JFrame {
             }
         });
         sendbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        sendbtn.setBounds(746, 573, 107, 35);
+        sendbtn.setBounds(746, 573, 115, 30);
         PAddFeedback.add(sendbtn);
 
         customeridfld = new JTextField();
@@ -161,24 +162,27 @@ public class AddFeedback_D extends JFrame {
         PAddFeedback.add(customerlbl);
 
         JLabel ratinglbl = new JLabel("Rating :");
-        ratinglbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        ratinglbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
         ratinglbl.setBounds(587, 405, 81, 22);
         PAddFeedback.add(ratinglbl);
 
         JLabel cmntslbl = new JLabel("Comment :");
-        cmntslbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        cmntslbl.setBounds(587, 457, 81, 22);
+        cmntslbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        cmntslbl.setBounds(587, 457, 126, 22);
         PAddFeedback.add(cmntslbl);
 
         JLabel foodidlbl = new JLabel("Food ID :");
-        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
         foodidlbl.setBounds(587, 499, 81, 22);
         PAddFeedback.add(foodidlbl);
 
         JLabel customeridlbl = new JLabel("Customer ID :");
-        customeridlbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        customeridlbl.setBounds(587, 541, 94, 22);
+        customeridlbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        customeridlbl.setBounds(587, 541, 126, 22);
         PAddFeedback.add(customeridlbl);
+
+        PAddFeedback.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

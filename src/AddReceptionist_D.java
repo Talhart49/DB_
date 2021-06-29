@@ -46,23 +46,23 @@ public class AddReceptionist_D extends JFrame {
         PaddReceptionist.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PaddReceptionist.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddReceptionist.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddReceptionist.add(namelbl);
 
@@ -101,39 +101,40 @@ public class AddReceptionist_D extends JFrame {
                 }
             }
         });
-        Addbtn.setBounds(714, 645, 116, 40);
+        Addbtn.setBounds(714, 645, 132, 29);
         PaddReceptionist.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddReceptionist.add(backbtn);
 
         JLabel cniclbl = new JLabel("CNIC :");
-        cniclbl.setForeground(Color.WHITE);
-        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        cniclbl.setForeground(Color.BLACK);
+        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         cniclbl.setBounds(548, 533, 102, 42);
         PaddReceptionist.add(cniclbl);
 
         JLabel numberlbl = new JLabel("Contact No :");
-        numberlbl.setForeground(Color.WHITE);
-        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        numberlbl.setBounds(548, 480, 102, 42);
+        numberlbl.setForeground(Color.BLACK);
+        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        numberlbl.setBounds(548, 480, 117, 42);
         PaddReceptionist.add(numberlbl);
 
         JLabel passwordlbl = new JLabel("Password :");
-        passwordlbl.setForeground(Color.WHITE);
-        passwordlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        passwordlbl.setForeground(Color.BLACK);
+        passwordlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         passwordlbl.setBounds(548, 590, 102, 42);
         PaddReceptionist.add(passwordlbl);
 
@@ -154,8 +155,8 @@ public class AddReceptionist_D extends JFrame {
         PaddReceptionist.add(passwordfld);
 
         Receptionistlbl = new JLabel("Add Receptionist");
-        Receptionistlbl.setForeground(Color.WHITE);
-        Receptionistlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Receptionistlbl.setForeground(Color.BLACK);
+        Receptionistlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         Receptionistlbl.setBounds(728, 254, 210, 40);
         PaddReceptionist.add(Receptionistlbl);
 
@@ -164,6 +165,9 @@ public class AddReceptionist_D extends JFrame {
         numberfld.setColumns(10);
         numberfld.setBounds(714, 480, 283, 44);
         PaddReceptionist.add(numberfld);
+
+        PaddReceptionist.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

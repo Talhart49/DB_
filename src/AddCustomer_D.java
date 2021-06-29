@@ -46,23 +46,23 @@ public class AddCustomer_D extends JFrame {
         PaddCustomer.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PaddCustomer.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddCustomer.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddCustomer.add(namelbl);
 
@@ -101,34 +101,35 @@ public class AddCustomer_D extends JFrame {
 
             }
         });
-        Addbtn.setBounds(714, 671, 116, 40);
+        Addbtn.setBounds(714, 643, 122, 29);
         PaddCustomer.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Recep_Dashboard_D a=new Recep_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddCustomer.add(backbtn);
 
         JLabel cniclbl = new JLabel("CNIC :");
-        cniclbl.setForeground(Color.WHITE);
-        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        cniclbl.setForeground(Color.BLACK);
+        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         cniclbl.setBounds(548, 532, 102, 42);
         PaddCustomer.add(cniclbl);
 
         JLabel experincelbl = new JLabel("Delivery Man ID :");
-        experincelbl.setForeground(Color.WHITE);
-        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        experincelbl.setBounds(548, 590, 135, 42);
+        experincelbl.setForeground(Color.BLACK);
+        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        experincelbl.setBounds(548, 590, 156, 42);
         PaddCustomer.add(experincelbl);
 
         namefld = new JTextField();
@@ -144,8 +145,8 @@ public class AddCustomer_D extends JFrame {
         PaddCustomer.add(cnicfld);
 
         customerlbl = new JLabel("Add Customer");
-        customerlbl.setForeground(Color.WHITE);
-        customerlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        customerlbl.setForeground(Color.BLACK);
+        customerlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         customerlbl.setBounds(728, 254, 210, 40);
         PaddCustomer.add(customerlbl);
 
@@ -162,10 +163,13 @@ public class AddCustomer_D extends JFrame {
         PaddCustomer.add(delimanidfld);
 
         JLabel numberlbl = new JLabel("Number :");
-        numberlbl.setForeground(Color.WHITE);
-        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        numberlbl.setForeground(Color.BLACK);
+        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         numberlbl.setBounds(548, 477, 102, 42);
         PaddCustomer.add(numberlbl);
+
+        PaddCustomer.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

@@ -47,23 +47,23 @@ public class AddDeals_D extends JFrame {
         PaddDeals.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PaddDeals.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddDeals.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddDeals.add(namelbl);
 
@@ -102,28 +102,29 @@ public class AddDeals_D extends JFrame {
 
             }
         });
-        Addbtn.setBounds(714, 651, 116, 40);
+        Addbtn.setBounds(714, 651, 124, 29);
         PaddDeals.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddDeals.add(backbtn);
 
         JLabel desclbl = new JLabel("Description :");
-        desclbl.setForeground(Color.WHITE);
-        desclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        desclbl.setBounds(548, 532, 102, 42);
+        desclbl.setForeground(Color.BLACK);
+        desclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        desclbl.setBounds(548, 532, 139, 42);
         PaddDeals.add(desclbl);
 
         namefld = new JTextField();
@@ -139,8 +140,8 @@ public class AddDeals_D extends JFrame {
         PaddDeals.add(Descfld);
 
         Dealslbl = new JLabel("Add Deals");
-        Dealslbl.setForeground(Color.WHITE);
-        Dealslbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Dealslbl.setForeground(Color.BLACK);
+        Dealslbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         Dealslbl.setBounds(728, 254, 210, 40);
         PaddDeals.add(Dealslbl);
 
@@ -151,8 +152,8 @@ public class AddDeals_D extends JFrame {
         PaddDeals.add(pricefld);
 
         JLabel pricelbl = new JLabel("Price :");
-        pricelbl.setForeground(Color.WHITE);
-        pricelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        pricelbl.setForeground(Color.BLACK);
+        pricelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         pricelbl.setBounds(548, 477, 102, 42);
         PaddDeals.add(pricelbl);
 
@@ -163,10 +164,13 @@ public class AddDeals_D extends JFrame {
         PaddDeals.add(foodidfld);
 
         foodidlbl = new JLabel("Food Item ID :");
-        foodidlbl.setForeground(Color.WHITE);
-        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        foodidlbl.setBounds(548, 585, 116, 40);
+        foodidlbl.setForeground(Color.BLACK);
+        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        foodidlbl.setBounds(548, 585, 139, 40);
         PaddDeals.add(foodidlbl);
+
+        PaddDeals.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

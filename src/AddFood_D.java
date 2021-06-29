@@ -44,23 +44,24 @@ public class AddFood_D extends JFrame {
         PaddFood.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PaddFood.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setBackground(new Color(240, 240, 240));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddFood.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddFood.add(namelbl);
 
@@ -98,18 +99,19 @@ public class AddFood_D extends JFrame {
         PaddFood.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddFood.add(backbtn);
 
         namefld = new JTextField();
@@ -119,8 +121,8 @@ public class AddFood_D extends JFrame {
         PaddFood.add(namefld);
 
         Foodlbl = new JLabel("Add Food Items");
-        Foodlbl.setForeground(Color.WHITE);
-        Foodlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Foodlbl.setForeground(Color.BLACK);
+        Foodlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         Foodlbl.setBounds(728, 254, 210, 40);
         PaddFood.add(Foodlbl);
 
@@ -131,10 +133,13 @@ public class AddFood_D extends JFrame {
         PaddFood.add(pricefld);
 
         JLabel pricelbl = new JLabel("Price :");
-        pricelbl.setForeground(Color.WHITE);
-        pricelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        pricelbl.setForeground(Color.BLACK);
+        pricelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         pricelbl.setBounds(548, 477, 102, 42);
         PaddFood.add(pricelbl);
+
+        PaddFood.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

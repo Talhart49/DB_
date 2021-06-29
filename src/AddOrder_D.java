@@ -45,24 +45,24 @@ public class AddOrder_D extends JFrame {
         Paddorder.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        Paddorder.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         Paddorder.add(idlbl);
 
 
         JLabel desclbl = new JLabel("Description :");
-        desclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        desclbl.setForeground(new Color(255,255,255));
-        desclbl.setBounds(548, 424, 102, 42);
+        desclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        desclbl.setForeground(Color.BLACK);
+        desclbl.setBounds(548, 424, 116, 42);
         Paddorder.add(desclbl);
 
         idfld = new JTextField();
@@ -79,49 +79,45 @@ public class AddOrder_D extends JFrame {
                     if (AddAll.Addorder(Integer.parseInt(idfld.getText()),descfld.getText(),
                             Integer.parseInt(waiterIDfld.getText()),Integer.parseInt(delimanidfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        descfld.setText("");
-                        waiterIDfld.setText("");
-                        delimanidfld.setText("");
-
 
 
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        descfld.setText("");
-                        waiterIDfld.setText("");
-                        delimanidfld.setText("");
 
                     }
+                    idfld.setText("");
+                    descfld.setText("");
+                    waiterIDfld.setText("");
+                    delimanidfld.setText("");
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
             }
         });
-        Addbtn.setBounds(714, 611, 116, 40);
+        Addbtn.setBounds(714, 611, 126, 29);
         Paddorder.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Recep_Dashboard_D a=new Recep_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         Paddorder.add(backbtn);
 
         JLabel experincelbl = new JLabel("Delivery Man ID :");
-        experincelbl.setForeground(Color.WHITE);
-        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        experincelbl.setBounds(548, 536, 135, 42);
+        experincelbl.setForeground(Color.BLACK);
+        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        experincelbl.setBounds(548, 536, 156, 42);
         Paddorder.add(experincelbl);
 
         descfld = new JTextField();
@@ -131,8 +127,8 @@ public class AddOrder_D extends JFrame {
         Paddorder.add(descfld);
 
         orderlbl = new JLabel("Add Order");
-        orderlbl.setForeground(Color.WHITE);
-        orderlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        orderlbl.setForeground(Color.BLACK);
+        orderlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         orderlbl.setBounds(728, 254, 210, 40);
         Paddorder.add(orderlbl);
 
@@ -149,10 +145,13 @@ public class AddOrder_D extends JFrame {
         Paddorder.add(delimanidfld);
 
         JLabel Waiteridlbl = new JLabel("Waiter ID :");
-        Waiteridlbl.setForeground(Color.WHITE);
-        Waiteridlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Waiteridlbl.setBounds(548, 477, 102, 42);
+        Waiteridlbl.setForeground(Color.BLACK);
+        Waiteridlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        Waiteridlbl.setBounds(548, 477, 116, 42);
         Paddorder.add(Waiteridlbl);
+
+        Paddorder.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

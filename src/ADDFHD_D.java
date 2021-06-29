@@ -43,24 +43,24 @@ public class ADDFHD_D extends JFrame {
         Paddfhd.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        Paddfhd.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
 
 
 
         JLabel foodidlbl = new JLabel("Food ID :");
-        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        foodidlbl.setForeground(new Color(255,255,255));
+        foodidlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        foodidlbl.setForeground(Color.BLACK);
         foodidlbl.setBounds(548, 370, 102, 40);
         Paddfhd.add(foodidlbl);
 
 
         JLabel homedeliidlbl = new JLabel("Home Delivery ID :");
-        homedeliidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        homedeliidlbl.setForeground(new Color(255,255,255));
-        homedeliidlbl.setBounds(548, 424, 156, 42);
+        homedeliidlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        homedeliidlbl.setForeground(Color.BLACK);
+        homedeliidlbl.setBounds(548, 424, 160, 42);
         Paddfhd.add(homedeliidlbl);
 
         foodidfld = new JTextField();
@@ -93,22 +93,23 @@ public class ADDFHD_D extends JFrame {
                 }
             }
         });
-        Addbtn.setBounds(714, 490, 116, 40);
+        Addbtn.setBounds(714, 490, 120, 29);
         Paddfhd.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Recep_Dashboard_D a=new Recep_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         Paddfhd.add(backbtn);
 
         homeDeliIDfld = new JTextField();
@@ -118,10 +119,13 @@ public class ADDFHD_D extends JFrame {
         Paddfhd.add(homeDeliIDfld);
 
         FHDlbl = new JLabel("Add Food_Delivery Relation");
-        FHDlbl.setForeground(Color.WHITE);
-        FHDlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        FHDlbl.setBounds(728, 254, 269, 40);
+        FHDlbl.setForeground(Color.BLACK);
+        FHDlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+        FHDlbl.setBounds(687, 254, 314, 40);
         Paddfhd.add(FHDlbl);
+
+        Paddfhd.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 

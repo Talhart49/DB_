@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,7 +25,7 @@ public class AddAll {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            JOptionPane.showMessageDialog(null,"Enter Again");
         }
         int count=0;
         for (int i = 0; i < name.length(); i++) {

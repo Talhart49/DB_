@@ -50,23 +50,22 @@ public class AddAdmin_D extends JFrame {
         PaddAdmin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(681, 11, 601, 365);
-        PaddAdmin.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddAdmin.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddAdmin.add(namelbl);
 
@@ -84,86 +83,64 @@ public class AddAdmin_D extends JFrame {
 //            String
 
         Addbtn = new JButton("Add");
+        Addbtn.setBackground(Color.LIGHT_GRAY);
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
-           public void actionPerformed(ActionEvent e) {
-               try {
-                   if (AddAll.AddAdmin(Integer.parseInt(idfld.getText()), namefld.getText(),cnicfld.getText(),emailfld.getText(),String.valueOf(passwordfld.getPassword()))){
-                       JOptionPane.showMessageDialog(null,"Added");
-                       idfld.setText("");
-                       emailfld.setText("");
-                       namefld.setText("");
-                       cnicfld.setText("");
-                       passwordfld.setText("");
-                   }
-                   else {
-                       JOptionPane.showMessageDialog(null,"Error Enter Again");
-                       idfld.setText("");
-                       emailfld.setText("");
-                       namefld.setText("");
-                       cnicfld.setText("");
-                       passwordfld.setText("");
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (AddAll.AddAdmin(Integer.parseInt(idfld.getText()), namefld.getText(),
+                            cnicfld.getText(),emailfld.getText(),String.valueOf(passwordfld.getPassword()))){
+                        JOptionPane.showMessageDialog(null,"Added");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error Enter Again");
 
-                   }
-               } catch (SQLException throwables) {
-                   throwables.printStackTrace();
-               }
-//
-//                }if (addyes){
-//                    Connection connection;
-//
-//                    try {
-//                        connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "databaseproject", "databaseproject");
-////                        String query = " insert into admin "
-////                                + " values (?, ?, ?, ?, ?)";
-////                        PreparedStatement preparedStmt = connection.prepareStatement(query);
-////                        preparedStmt.setString (1, idfld.getText());
-////                        preparedStmt.setString(2,namefld.getText());
-////                        preparedStmt.setString (3,cnicfld.getText() );
-////                        preparedStmt.setString(4,emailfld.getText());
-////                        preparedStmt.setString (5,String.valueOf(passwordfld.getPassword()));
-////                        System.out.println(String.valueOf(passwordfld.getPassword()));
-////                        preparedStmt.executeUpdate();
-//                    }
-//                    catch (Exception ev)
-//                    {
-//                        System.out.println(ev);
-//                    }
+                    }
+                    idfld.setText("");
+                    emailfld.setText("");
+                    namefld.setText("");
+                    cnicfld.setText("");
+                    passwordfld.setText("");
+                } catch (SQLException y) {
+                    JOptionPane.showMessageDialog(null,"Error Enter Again");
+                }
+
             }
         });
-        Addbtn.setBounds(714, 645, 116, 40);
+        Addbtn.setBounds(714, 645, 129, 29);
         PaddAdmin.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddAdmin.add(backbtn);
 
         JLabel cniclbl = new JLabel("CNIC :");
-        cniclbl.setForeground(Color.WHITE);
-        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        cniclbl.setForeground(Color.BLACK);
+        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         cniclbl.setBounds(548, 482, 102, 42);
         PaddAdmin.add(cniclbl);
 
         JLabel emaillbl = new JLabel("Email :");
-        emaillbl.setForeground(Color.WHITE);
-        emaillbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        emaillbl.setForeground(Color.BLACK);
+        emaillbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         emaillbl.setBounds(548, 535, 102, 42);
         PaddAdmin.add(emaillbl);
 
         JLabel passwordlbl = new JLabel("Password :");
-        passwordlbl.setForeground(Color.WHITE);
-        passwordlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        passwordlbl.setForeground(Color.BLACK);
+        passwordlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         passwordlbl.setBounds(548, 590, 102, 42);
         PaddAdmin.add(passwordlbl);
 
@@ -186,14 +163,15 @@ public class AddAdmin_D extends JFrame {
         PaddAdmin.add(emailfld);
 
         passwordfld = new JPasswordField();
+        passwordfld.setForeground(Color.BLACK);
         passwordfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
         passwordfld.setBounds(714, 590, 283, 44);
         PaddAdmin.add(passwordfld);
 
         JLabel  Adminlbl = new JLabel("Add Admin");
-        Adminlbl.setForeground(Color.WHITE);
-        Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        Adminlbl.setBounds(728, 254, 210, 40);
+        Adminlbl.setForeground(Color.BLACK);
+        Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 22));
+        Adminlbl.setBounds(714, 279, 210, 40);
         PaddAdmin.add(Adminlbl);
 
 
@@ -212,6 +190,9 @@ public class AddAdmin_D extends JFrame {
 //        table.setCellSelectionEnabled(true);
 //        table.setBounds(141, 254, 509, -106);
 //        PaddAdmin.add(table);
+
+
+        PaddAdmin.add(backgroundlabel);
 
         setLocationRelativeTo(null);
 

@@ -44,16 +44,15 @@ public class AddCooks_D extends JFrame {
         Paddcooks.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        Paddcooks.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
 
 
 
 
         JLabel Chefidlbl = new JLabel("Chef ID :");
-        Chefidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Chefidlbl.setForeground(new Color(255,255,255));
+        Chefidlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        Chefidlbl.setForeground(Color.BLACK);
         Chefidlbl.setBounds(548, 370, 102, 40);
         Paddcooks.add(Chefidlbl);
 
@@ -87,33 +86,34 @@ public class AddCooks_D extends JFrame {
                 }
             }
         });
-        Addbtn.setBounds(714, 561, 116, 40);
+        Addbtn.setBounds(714, 487, 124, 29);
         Paddcooks.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         Paddcooks.add(backbtn);
 
         Cookslbl = new JLabel("Add Cooks Relation");
-        Cookslbl.setForeground(Color.WHITE);
-        Cookslbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Cookslbl.setForeground(Color.BLACK);
+        Cookslbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         Cookslbl.setBounds(728, 254, 210, 40);
         Paddcooks.add(Cookslbl);
 
         foodlbl = new JLabel("Food Item ID :");
-        foodlbl.setForeground(Color.WHITE);
-        foodlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        foodlbl.setForeground(Color.BLACK);
+        foodlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         foodlbl.setBounds(548, 436, 116, 40);
         Paddcooks.add(foodlbl);
 
@@ -122,6 +122,10 @@ public class AddCooks_D extends JFrame {
         foodfld.setColumns(10);
         foodfld.setBounds(714, 432, 283, 44);
         Paddcooks.add(foodfld);
+
+        Paddcooks.add(backgroundlabel);
+
+
         setLocationRelativeTo(null);
 
 

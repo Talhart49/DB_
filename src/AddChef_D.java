@@ -46,23 +46,22 @@ public class AddChef_D extends JFrame {
         PaddChef.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PaddChef.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setBounds(0, -16, 1370, 765);
 
 
 
 
         JLabel idlbl = new JLabel("ID :");
-        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        idlbl.setForeground(new Color(255,255,255));
+        idlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        idlbl.setForeground(Color.BLACK);
         idlbl.setBounds(548, 370, 102, 40);
         PaddChef.add(idlbl);
 
 
         JLabel namelbl = new JLabel("Name :");
-        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        namelbl.setForeground(new Color(255,255,255));
+        namelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        namelbl.setForeground(Color.BLACK);
         namelbl.setBounds(548, 424, 102, 42);
         PaddChef.add(namelbl);
 
@@ -80,54 +79,49 @@ public class AddChef_D extends JFrame {
                     if (AddAll.AddChef(Integer.parseInt(idfld.getText()),namefld.getText(),
                             numberfld.getText(),cnicfld.getText(), Integer.parseInt(experincefld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
-                        experincefld.setText("");
 
 
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
-                        experincefld.setText("");
                     }
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                    experincefld.setText("");
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
+                    JOptionPane.showMessageDialog(null,"Error, Please Enter Again");                }
             }
         });
-        Addbtn.setBounds(714, 671, 116, 40);
+        Addbtn.setBounds(714, 643, 120, 29);
         PaddChef.add(Addbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PaddChef.add(backbtn);
 
         JLabel cniclbl = new JLabel("CNIC :");
-        cniclbl.setForeground(Color.WHITE);
-        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        cniclbl.setForeground(Color.BLACK);
+        cniclbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         cniclbl.setBounds(548, 532, 102, 42);
         PaddChef.add(cniclbl);
 
         JLabel experincelbl = new JLabel("Experince :");
-        experincelbl.setForeground(Color.WHITE);
-        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        experincelbl.setForeground(Color.BLACK);
+        experincelbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         experincelbl.setBounds(548, 590, 102, 42);
         PaddChef.add(experincelbl);
 
@@ -144,8 +138,8 @@ public class AddChef_D extends JFrame {
         PaddChef.add(cnicfld);
 
         Cheflbl = new JLabel("Add Chef");
-        Cheflbl.setForeground(Color.WHITE);
-        Cheflbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        Cheflbl.setForeground(Color.BLACK);
+        Cheflbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         Cheflbl.setBounds(728, 254, 210, 40);
         PaddChef.add(Cheflbl);
 
@@ -162,10 +156,14 @@ public class AddChef_D extends JFrame {
         PaddChef.add(experincefld);
 
         JLabel numberlbl = new JLabel("Number :");
-        numberlbl.setForeground(Color.WHITE);
-        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        numberlbl.setForeground(Color.BLACK);
+        numberlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         numberlbl.setBounds(548, 477, 102, 42);
         PaddChef.add(numberlbl);
+
+        PaddChef.add(backgroundlabel);
+
+
         setLocationRelativeTo(null);
 
 
