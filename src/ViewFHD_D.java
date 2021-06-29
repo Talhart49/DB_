@@ -39,23 +39,24 @@ public class ViewFHD_D extends JFrame {
         PView.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PView.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\view.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Recep_Dashboard_D a=new Recep_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PView.add(backbtn);
 
         JLabel FHDlbl = new JLabel("Food_Delivery Data");
@@ -71,6 +72,7 @@ public class ViewFHD_D extends JFrame {
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
         VtextArea.setText(ViewAll.viewFHD());
+        PView.add(backgroundlabel);
         setLocationRelativeTo(null);
 
 
