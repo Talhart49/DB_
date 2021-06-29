@@ -47,9 +47,8 @@ public class ViewDeliMan_D extends JFrame {
         PViewDeliMan.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PViewDeliMan.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\view.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
 
         Searchbtn = new JButton("Search");
         Searchbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -80,35 +79,36 @@ public class ViewDeliMan_D extends JFrame {
         PViewDeliMan.add(Searchbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PViewDeliMan.add(backbtn);
 
         searchlbl = new JLabel("Search");
         searchlbl.setForeground(Color.WHITE);
-        searchlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        searchlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         searchlbl.setBounds(828, 242, 210, 40);
         PViewDeliMan.add(searchlbl);
 
         DeliManidlbl = new JLabel("Delivery Man ID :");
         DeliManidlbl.setForeground(Color.WHITE);
-        DeliManidlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        DeliManidlbl.setBounds(783, 293, 132, 40);
+        DeliManidlbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        DeliManidlbl.setBounds(783, 293, 139, 40);
         PViewDeliMan.add(DeliManidlbl);
 
         JLabel DeliManlbl = new JLabel("Delivery Man Data");
         DeliManlbl.setForeground(Color.WHITE);
-        DeliManlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        DeliManlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         DeliManlbl.setBounds(10, 203, 210, 40);
         PViewDeliMan.add(DeliManlbl);
 
@@ -134,6 +134,9 @@ public class ViewDeliMan_D extends JFrame {
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
         VtextArea.setText(ViewAll.viewDeliman());
+
+        PViewDeliMan.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 
