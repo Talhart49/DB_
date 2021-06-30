@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -145,23 +145,104 @@ public class AddFeedback_D extends JFrame {
         ratingfld.setBounds(746, 405, 285, 31);
         PAddFeedback.add(ratingfld);
 
-        JScrollPane FscrollPane = new JScrollPane();
-        FscrollPane.setBounds(10, 173, 470, 183);
-        PAddFeedback.add(FscrollPane);
 
-        JTextArea FtextArea = new JTextArea();
-        FtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        FtextArea.setText(ViewAll.viewfood());
-        FscrollPane.setViewportView(FtextArea);
+        String n="",e="",f="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from food_items");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
 
-        JScrollPane CscrollPane = new JScrollPane();
-        CscrollPane.setBounds(10, 420, 470, 183);
-        PAddFeedback.add(CscrollPane);
+            JTable jTabel1= new JTable(model);
 
-        JTextArea CtextArea = new JTextArea();
-        CtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        CtextArea.setText(ViewAll.viewcustomer());
-        CscrollPane.setViewportView(CtextArea);
+
+//                model.addColumn("Order ID");
+            model.addColumn("Deal ID");
+            model.addColumn("Name ");
+            model.addColumn("Price");
+
+            model.addRow(new Object[]{"Deal ID","Name ","Price"});
+            model.addRow(new Object[]{"-","- ","- "});
+
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+                f=res.getString(3);
+
+                model.addRow(new Object[]{n,e,f});
+            }
+            PAddFeedback.setLayout(null);
+            jTabel1.setBounds(10, 173, 470, 183);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PAddFeedback.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
+
+//        JScrollPane FscrollPane = new JScrollPane();
+//        FscrollPane.setBounds(10, 173, 470, 183);
+//        PAddFeedback.add(FscrollPane);
+//
+//        JTextArea FtextArea = new JTextArea();
+//        FtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
+//        FtextArea.setText(ViewAll.viewfood());
+//        FscrollPane.setViewportView(FtextArea);
+
+
+
+//        JScrollPane CscrollPane = new JScrollPane();
+//        CscrollPane.setBounds(10, 420, 470, 183);
+//        PAddFeedback.add(CscrollPane);
+//
+//        JTextArea CtextArea = new JTextArea();
+//        CtextArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
+//        CtextArea.setText(ViewAll.viewcustomer());
+//        CscrollPane.setViewportView(CtextArea);
+
+        String a="",c="",d="",t="",b="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from Customer");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
+
+            JTable jTabel1= new JTable(model);
+
+
+//                model.addColumn("Order ID");
+            model.addColumn("Customer ID");
+            model.addColumn("Name ");
+            model.addColumn("Contact_NO");
+            model.addColumn("CNIC");
+            model.addColumn("Delivery Man ID");
+            model.addRow(new Object[]{"Customer ID","Name ","Contact_NO","CNIC","Delivery Man ID"});
+            model.addRow(new Object[]{"-","- ","- ","-","-"});
+
+            while(res.next())
+            {
+                a=res.getString(1);
+                c=res.getString(2);
+                d=res.getString(3);
+                t=res.getString(4);
+                b=res.getString(5);
+                model.addRow(new Object[]{a,c,d,t,b});
+            }
+            PAddFeedback.setLayout(null);
+            jTabel1.setBounds(10, 420, 470, 183);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PAddFeedback.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
 
         JLabel customerlbl = new JLabel("Customer Data");
         customerlbl.setForeground(Color.WHITE);
