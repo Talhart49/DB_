@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -65,13 +66,53 @@ public class ViewCustomer_D extends JFrame {
         customerlbl.setBounds(10, 203, 210, 40);
         PView.add(customerlbl);
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(29, 362, 606, 263);
-        PView.add(scrollPane);
+        String n="",e="",f="",t="",b="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from Customer");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
 
-        JTextArea VtextArea = new JTextArea();
-        scrollPane.setViewportView(VtextArea);
-        VtextArea.setText(ViewAll.viewcustomer());
+            JTable jTabel1= new JTable(model);
+
+
+//                model.addColumn("Order ID");
+            model.addColumn("Customer ID");
+            model.addColumn("Name ");
+            model.addColumn("Contact_NO");
+            model.addColumn("CNIC");
+            model.addColumn("Delivery Man ID");
+            model.addRow(new Object[]{"Customer ID","Name ","Contact_NO","CNIC","Delivery Man ID"});
+            model.addRow(new Object[]{"-","- ","- ","-","-"});
+
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+                f=res.getString(3);
+                t=res.getString(4);
+                b=res.getString(5);
+                model.addRow(new Object[]{n,e,f,t,b});
+            }
+            PView.setLayout(null);
+            jTabel1.setBounds(10, 262, 680, 263);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PView.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
+
+//        JScrollPane scrollPane = new JScrollPane();
+//        scrollPane.setBounds(29, 362, 606, 263);
+//        PView.add(scrollPane);
+//
+//        JTextArea VtextArea = new JTextArea();
+//        scrollPane.setViewportView(VtextArea);
+//        VtextArea.setText(ViewAll.viewcustomer());
         PView.add(backgroundlabel);
         setLocationRelativeTo(null);
 

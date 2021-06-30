@@ -2,10 +2,9 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -120,16 +119,54 @@ public class ViewAdmin_D extends JFrame {
         PViewAdmin.add(idfld);
         idfld.setColumns(10);
 
+        String n="",e="",f="",t="",b="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from Admin");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
+
+            JTable jTabel1= new JTable(model);
 
 
-        JScrollPane VscrollPane = new JScrollPane();
-        VscrollPane.setBounds(29, 362, 606, 263);
-        PViewAdmin.add(VscrollPane);
+//                model.addColumn("Order ID");
+            model.addColumn("Admin ID");
+            model.addColumn("Name ");
+            model.addColumn("CNIC");
+            model.addColumn("Email");
+            model.addColumn("Password");
+            model.addRow(new Object[]{"Admin ID","Name ","CNIC","Email","Password"});
+            model.addRow(new Object[]{"-","- ","- ","-","-"});
 
-        JTextArea VtextArea = new JTextArea();
-        VtextArea.setEditable(false);
-        VscrollPane.setViewportView(VtextArea);
-        VtextArea.setText(ViewAll.viewAdmin());
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+                f=res.getString(3);
+                t=res.getString(4);
+                b=res.getString(5);
+                model.addRow(new Object[]{n,e,f,t,b});
+            }
+            PViewAdmin.setLayout(null);
+            jTabel1.setBounds(10, 262, 680, 263);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PViewAdmin.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
+
+//        JScrollPane VscrollPane = new JScrollPane();
+//        VscrollPane.setBounds(29, 362, 606, 263);
+//        PViewAdmin.add(VscrollPane);
+//
+//        JTextArea VtextArea = new JTextArea();
+//        VtextArea.setEditable(false);
+//        VscrollPane.setViewportView(VtextArea);
+//        VtextArea.setText(ViewAll.viewAdmin());
 
         SscrollPane = new JScrollPane();
         SscrollPane.setBounds(700, 429, 542, 62);

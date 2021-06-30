@@ -2,9 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -128,13 +126,52 @@ public class ViewStats_D extends JFrame {
         StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
         StextArea.setBackground(Color.WHITE);
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(29, 362, 606, 263);
-        PViewStats.add(scrollPane);
+//        JScrollPane scrollPane = new JScrollPane();
+//        scrollPane.setBounds(29, 362, 606, 263);
+//        PViewStats.add(scrollPane);
+//
+//        JTextArea VtextArea = new JTextArea();
+//        scrollPane.setViewportView(VtextArea);
+//        VtextArea.setText(ViewAll.viewStatistics());
 
-        JTextArea VtextArea = new JTextArea();
-        scrollPane.setViewportView(VtextArea);
-        VtextArea.setText(ViewAll.viewStatistics());
+        String n="",e="",f="",t="",b="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from statistics");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
+
+            JTable jTabel1= new JTable(model);
+
+
+//                model.addColumn("Order ID");
+            model.addColumn("ID");
+            model.addColumn("Sold Amount ");
+            model.addColumn("Customer Satisfaction");
+            model.addColumn("Food ID");
+            model.addRow(new Object[]{"ID","Sold Amount ","Customer Satisfaction","Food ID"});
+            model.addRow(new Object[]{"-","- ","- ","-","-"});
+
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+                f=res.getString(3);
+                t=res.getString(4);
+
+                model.addRow(new Object[]{n,e,f,t});
+            }
+            PViewStats.setLayout(null);
+            jTabel1.setBounds(10, 262, 680, 263);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PViewStats.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
         PViewStats.add(backgroundlabel);
         setLocationRelativeTo(null);
 

@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -65,13 +66,48 @@ public class ViewCooks_D extends JFrame {
         Cookslbl.setBounds(10, 203, 210, 40);
         PViewCooks.add(Cookslbl);
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(29, 362, 606, 263);
-        PViewCooks.add(scrollPane);
+        String n="",e="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from Chef_Fooditems");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
 
-        JTextArea VtextArea = new JTextArea();
-        scrollPane.setViewportView(VtextArea);
-        VtextArea.setText(ViewAll.viewcooks());
+            JTable jTabel1= new JTable(model);
+
+
+//                model.addColumn("Order ID");
+            model.addColumn("Chef ID");
+            model.addColumn("Food ID ");
+            model.addRow(new Object[]{"Chef ID","Food ID "});
+            model.addRow(new Object[]{"-","- "});
+
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+
+                model.addRow(new Object[]{n,e});
+            }
+            PViewCooks.setLayout(null);
+            jTabel1.setBounds(10, 262, 680, 263);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PViewCooks.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
+//
+//        JScrollPane scrollPane = new JScrollPane();
+//        scrollPane.setBounds(29, 362, 606, 263);
+//        PViewCooks.add(scrollPane);
+//
+//        JTextArea VtextArea = new JTextArea();
+//        scrollPane.setViewportView(VtextArea);
+//        VtextArea.setText(ViewAll.viewcooks());
         PViewCooks.add(backgroundlabel);
         setLocationRelativeTo(null);
 

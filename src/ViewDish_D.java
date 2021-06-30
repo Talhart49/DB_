@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -65,13 +66,51 @@ public class ViewDish_D extends JFrame {
         Dishlbl.setBounds(10, 203, 210, 40);
         PViewDish.add(Dishlbl);
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(29, 362, 606, 263);
-        PViewDish.add(scrollPane);
+//        JScrollPane scrollPane = new JScrollPane();
+//        scrollPane.setBounds(29, 362, 606, 263);
+//        PViewDish.add(scrollPane);
+//
+//        JTextArea VtextArea = new JTextArea();
+//        scrollPane.setViewportView(VtextArea);
+//        VtextArea.setText(ViewAll.viewdish());
 
-        JTextArea VtextArea = new JTextArea();
-        scrollPane.setViewportView(VtextArea);
-        VtextArea.setText(ViewAll.viewdish());
+        String n="",e="",f="",t="",b="";
+        try {
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","databaseproject","databaseproject");
+            PreparedStatement pst=con.prepareStatement("select * from fooditems_ingredients");
+            ResultSet res=pst.executeQuery();
+            DefaultTableModel model;
+            model= new DefaultTableModel();
+
+            JTable jTabel1= new JTable(model);
+
+
+//                model.addColumn("Order ID");
+            model.addColumn("Food ID");
+            model.addColumn("Ingredient ID ");
+            model.addRow(new Object[]{"Food ID","Ingredient ID "});
+
+            model.addRow(new Object[]{"-","- "});
+
+            while(res.next())
+            {
+                n=res.getString(1);
+                e=res.getString(2);
+
+                model.addRow(new Object[]{n,e});
+            }
+            PViewDish.setLayout(null);
+            jTabel1.setBounds(10, 262, 680, 263);
+            jTabel1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+//                PView.setSize(1200,800);
+            PViewDish.add(jTabel1);
+//                PView.setVisible(true);
+        }
+
+        catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error");   }
+
+
         PViewDish.add(backgroundlabel);
         setLocationRelativeTo(null);
 
