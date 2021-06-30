@@ -45,7 +45,7 @@ public class AddOrder_D extends JFrame {
         Paddorder.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\add.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("add.jpg"));
         backgroundlabel.setBounds(0, 0, 1370, 749);
 
 
@@ -71,6 +71,7 @@ public class AddOrder_D extends JFrame {
         Paddorder.add(idfld);
         idfld.setColumns(10);
 
+
         Addbtn = new JButton("Add");
         Addbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
         Addbtn.addActionListener(new ActionListener() {
@@ -78,7 +79,10 @@ public class AddOrder_D extends JFrame {
                 try {
                     if (AddAll.Addorder(Integer.parseInt(idfld.getText()),descfld.getText(),
                             Integer.parseInt(waiterIDfld.getText()),Integer.parseInt(delimanidfld.getText()))){
-                        JOptionPane.showMessageDialog(null,"Added");
+                        String Receipt="ID : "+idfld.getText()+"\n"
+                                +"Description: "+ descfld.getText() +"\n"+
+                                "Waiter ID :" +waiterIDfld.getText()+"\n";
+                        JOptionPane.showMessageDialog(null,Receipt);
 
 
                     }
@@ -99,7 +103,7 @@ public class AddOrder_D extends JFrame {
         Paddorder.add(Addbtn);
 
         backbtn = new JButton("Back");
-        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
+        backbtn.setIcon(new ImageIcon("bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
