@@ -46,9 +46,9 @@ public class ViewWaiter_D extends JFrame {
         PViewWaiter.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PViewWaiter.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\view.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
         Searchbtn = new JButton("Search");
         Searchbtn.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -79,6 +79,7 @@ public class ViewWaiter_D extends JFrame {
         PViewWaiter.add(Searchbtn);
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -90,25 +91,25 @@ public class ViewWaiter_D extends JFrame {
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PViewWaiter.add(backbtn);
 
         searchlbl = new JLabel("Search");
         searchlbl.setForeground(Color.WHITE);
-        searchlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        searchlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         searchlbl.setBounds(828, 242, 210, 40);
         PViewWaiter.add(searchlbl);
 
         Waiteridlbl = new JLabel("Waiter ID :");
         Waiteridlbl.setForeground(Color.WHITE);
-        Waiteridlbl.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        Waiteridlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         Waiteridlbl.setBounds(783, 293, 132, 40);
         PViewWaiter.add(Waiteridlbl);
 
         JLabel Waiterlbl = new JLabel("Waiter Data");
         Waiterlbl.setForeground(Color.WHITE);
-        Waiterlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        Waiterlbl.setBounds(10, 203, 210, 40);
+        Waiterlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+        Waiterlbl.setBounds(29, 212, 210, 40);
         PViewWaiter.add(Waiterlbl);
 
         idfld = new JTextField();
@@ -120,7 +121,7 @@ public class ViewWaiter_D extends JFrame {
         SscrollPane.setBounds(700, 429, 542, 62);
         PViewWaiter.add(SscrollPane);
 
-         StextArea = new JTextArea();
+        StextArea = new JTextArea();
         StextArea.setEditable(false);
         SscrollPane.setViewportView(StextArea);
         StextArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
@@ -133,6 +134,9 @@ public class ViewWaiter_D extends JFrame {
         JTextArea VtextArea = new JTextArea();
         scrollPane.setViewportView(VtextArea);
         VtextArea.setText(ViewAll.viewWaiter());
+
+        PViewWaiter.add(backgroundlabel);
+
         setLocationRelativeTo(null);
 
 
