@@ -78,8 +78,8 @@ public class AddCustomer_D extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || cnicfld.getText().isBlank()
-                            || numberfld.getText().isBlank() || delimanidfld.getToolTipText().isBlank())){
-                        if( AddAll.Addcustomer (Integer.parseInt(idfld.getText()),namefld.getText(),numberfld.getText()
+                            || numberfld.getText().isBlank() || delimanidfld.getText().isBlank())){
+                        if( AddAll.Addcustomer(Integer.parseInt(idfld.getText()),namefld.getText(),numberfld.getText()
                             ,cnicfld.getText(),Integer.parseInt(delimanidfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
                     }
