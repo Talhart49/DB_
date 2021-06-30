@@ -43,34 +43,35 @@ public class UDAdmin_D extends JFrame {
         PUD.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PUD.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\del.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
 
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PUD.add(backbtn);
 
         JLabel updatelbl = new JLabel("Update Data");
         updatelbl.setForeground(Color.WHITE);
-        updatelbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        updatelbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         updatelbl.setBounds(184, 189, 210, 40);
         PUD.add(updatelbl);
 
         JLabel dellbl = new JLabel("Delete Data");
         dellbl.setForeground(Color.WHITE);
-        dellbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        dellbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
         dellbl.setBounds(1010, 203, 210, 40);
         PUD.add(dellbl);
 
@@ -87,17 +88,20 @@ public class UDAdmin_D extends JFrame {
         PUD.add(emailfld);
 
         JLabel Uidlbl = new JLabel("ID:");
-        Uidlbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        Uidlbl.setForeground(Color.WHITE);
+        Uidlbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
         Uidlbl.setBounds(53, 270, 74, 22);
         PUD.add(Uidlbl);
 
         JLabel Uemaillbl = new JLabel("Updated Email:");
-        Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        Uemaillbl.setBounds(53, 322, 111, 22);
+        Uemaillbl.setForeground(Color.WHITE);
+        Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        Uemaillbl.setBounds(53, 325, 132, 22);
         PUD.add(Uemaillbl);
 
         JLabel Didlbl = new JLabel("ID:");
-        Didlbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        Didlbl.setForeground(Color.WHITE);
+        Didlbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
         Didlbl.setBounds(935, 258, 74, 22);
         PUD.add(Didlbl);
 
@@ -161,9 +165,10 @@ public class UDAdmin_D extends JFrame {
 
         JLabel Adminlbl = new JLabel("Admin Data");
         Adminlbl.setForeground(Color.WHITE);
-        Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        Adminlbl.setBounds(537, 150, 111, 40);
+        Adminlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 22));
+        Adminlbl.setBounds(594, 148, 165, 40);
         PUD.add(Adminlbl);
+        PUD.add(backgroundlabel);
         setLocationRelativeTo(null);
 
 

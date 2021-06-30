@@ -43,61 +43,64 @@ public class UDWaiter_D extends JFrame {
         PUD.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("fp.jpg"));
-        backgroundlabel.setBounds(925, 11, 357, 220);
-        PUD.add(backgroundlabel);
+        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\del.jpg"));
+        backgroundlabel.setBounds(0, 0, 1370, 749);
+
 
         backbtn = new JButton("Back");
+        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                dispose();
-//                Admin a=new Admin();
-//                a.setVisible(true);
-
+                dispose();
+                Admin_Dashboard_D a=new Admin_Dashboard_D();
+                a.setVisible(true);
             }
         });
         backbtn.setForeground(new Color(220, 20, 60));
         backbtn.setBackground(new Color(255, 235, 205));
-        backbtn.setBounds(10, 41, 154, 42);
+        backbtn.setBounds(0, 0, 139, 33);
         PUD.add(backbtn);
 
         JLabel updatelbl = new JLabel("Update Data");
         updatelbl.setForeground(Color.WHITE);
-        updatelbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        updatelbl.setBounds(184, 189, 210, 40);
+        updatelbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+        updatelbl.setBounds(238, 191, 210, 40);
         PUD.add(updatelbl);
 
         JLabel dellbl = new JLabel("Delete Data");
         dellbl.setForeground(Color.WHITE);
-        dellbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        dellbl.setBounds(1010, 203, 210, 40);
+        dellbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+        dellbl.setBounds(1021, 203, 210, 40);
         PUD.add(dellbl);
 
         Uidfld = new JTextField();
         Uidfld.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        Uidfld.setBounds(183, 270, 154, 30);
+        Uidfld.setBounds(240, 267, 154, 30);
         PUD.add(Uidfld);
         Uidfld.setColumns(10);
 
         emailfld = new JTextField();
         emailfld.setFont(new Font("Tahoma", Font.PLAIN, 16));
         emailfld.setColumns(10);
-        emailfld.setBounds(183, 322, 154, 30);
+        emailfld.setBounds(240, 318, 154, 30);
         PUD.add(emailfld);
 
         JLabel Uidlbl = new JLabel("ID:");
-        Uidlbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        Uidlbl.setForeground(Color.WHITE);
+        Uidlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         Uidlbl.setBounds(53, 270, 74, 22);
         PUD.add(Uidlbl);
 
         JLabel Uemaillbl = new JLabel("Updated Number:");
-        Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        Uemaillbl.setBounds(53, 322, 111, 22);
+        Uemaillbl.setForeground(Color.WHITE);
+        Uemaillbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        Uemaillbl.setBounds(53, 322, 154, 22);
         PUD.add(Uemaillbl);
 
         JLabel Didlbl = new JLabel("ID:");
-        Didlbl.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        Didlbl.setForeground(Color.WHITE);
+        Didlbl.setFont(new Font("Tahoma", Font.PLAIN, 19));
         Didlbl.setBounds(935, 258, 74, 22);
         PUD.add(Didlbl);
 
@@ -126,7 +129,7 @@ public class UDWaiter_D extends JFrame {
 
             }
         });
-        updatebtn.setBounds(184, 377, 110, 30);
+        updatebtn.setBounds(238, 378, 110, 30);
         PUD.add(updatebtn);
 
         JButton btnDelete = new JButton("Delete");
@@ -153,9 +156,10 @@ public class UDWaiter_D extends JFrame {
 
         JLabel Waiterlbl = new JLabel("Waiter Data");
         Waiterlbl.setForeground(Color.WHITE);
-        Waiterlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        Waiterlbl.setBounds(537, 150, 180, 40);
+        Waiterlbl.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 22));
+        Waiterlbl.setBounds(592, 147, 180, 40);
         PUD.add(Waiterlbl);
+        PUD.add(backgroundlabel);
         setLocationRelativeTo(null);
 
 
