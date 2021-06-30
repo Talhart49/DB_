@@ -76,6 +76,8 @@ public class AddDeliMan_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || numberfld.getText().isBlank()
+                            || cnicfld.getText().isBlank())){
                     if (AddAll.AddDeliMan(Integer.parseInt(idfld.getText()),namefld.getText(),
                             numberfld.getText(),cnicfld.getText())){
                         JOptionPane.showMessageDialog(null,"Added");
@@ -83,6 +85,11 @@ public class AddDeliMan_D extends JFrame {
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
 
+                    }
+
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
                     }
                     idfld.setText("");
                     namefld.setText("");

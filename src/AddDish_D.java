@@ -54,6 +54,7 @@ public class AddDish_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(foodfld.getText().isBlank() || ingredientfld.getText().isBlank() )){
                     if (AddAll.Adddish(Integer.parseInt(foodfld.getText()),
                             Integer.parseInt(ingredientfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
@@ -61,12 +62,17 @@ public class AddDish_D extends JFrame {
 
                     }
                     else {
-                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+
+                    }
+
+                }
+                else    {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
 
                     }
                     ingredientfld.setText("");
                     foodfld.setText("");
-                } catch (SQLException throwables) {
+                }catch (SQLException throwables) {
                     JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
                     ingredientfld.setText("");
                     foodfld.setText("");

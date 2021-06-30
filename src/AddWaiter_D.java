@@ -75,23 +75,26 @@ public class AddWaiter_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || numberfld.getText().isBlank()
+                            || cnicfld.getText().isBlank())){
                     if (AddAll.AddWaiter(Integer.parseInt(idfld.getText()),namefld.getText(),
                             numberfld.getText(),cnicfld.getText())){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
 
                     }
-                } catch (SQLException throwables) {
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                }
+
+                else {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
+                    }
+                }catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
             }

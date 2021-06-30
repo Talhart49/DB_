@@ -78,6 +78,8 @@ public class AddHomeDeli_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(idfld.getText().isBlank() || descfld.getText().isBlank() || addressfld.getText().isBlank()
+                            || paymentfld.getText().isBlank() || delimanidfld.getText().isBlank())){
                     if( AddAll.AddhomeDeli (Integer.parseInt(idfld.getText()),descfld.getText(),addressfld.getText()
                             , Integer.parseInt(paymentfld.getText()),Integer.parseInt(delimanidfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
@@ -91,7 +93,11 @@ public class AddHomeDeli_D extends JFrame {
                     addressfld.setText("");
                     paymentfld.setText("");
                     delimanidfld.setText("");
-                } catch (SQLException throwables) {
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Error ,Please fill all fields");
+                    }
+                }catch (SQLException throwables) {
                     JOptionPane.showMessageDialog(null,"Error Enter Again");
                     idfld.setText("");
                     descfld.setText("");

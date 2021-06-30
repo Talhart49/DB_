@@ -77,25 +77,32 @@ public class AddOrder_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if (AddAll.Addorder(Integer.parseInt(idfld.getText()),descfld.getText(),
-                            Integer.parseInt(waiterIDfld.getText()),Integer.parseInt(delimanidfld.getText()))){
-                        String Receipt="ID : "+idfld.getText()+"\n"
-                                +"Description: "+ descfld.getText() +"\n"+
-                                "Waiter ID :" +waiterIDfld.getText()+"\n";
-                        JOptionPane.showMessageDialog(null,Receipt);
+                    if (!(idfld.getText().isBlank() || descfld.getText().isBlank() || waiterIDfld.getText().isBlank()
+                            || delimanidfld.getText().isBlank())) {
+                        if (AddAll.Addorder(Integer.parseInt(idfld.getText()), descfld.getText(),
+                                Integer.parseInt(waiterIDfld.getText()), Integer.parseInt(delimanidfld.getText()))) {
+                            String Receipt = "ID : " + idfld.getText() + "\n"
+                                    + "Description: " + descfld.getText() + "\n" +
+                                    "Waiter ID :" + waiterIDfld.getText() + "\n";
+                            JOptionPane.showMessageDialog(null, Receipt);
 
 
-                    }
-                    else {
-                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error, Please Enter Again");
 
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error,Please Fill All");
                     }
                     idfld.setText("");
                     descfld.setText("");
                     waiterIDfld.setText("");
                     delimanidfld.setText("");
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                }  catch (SQLException throwables) {
+                    idfld.setText("");
+                    descfld.setText("");
+                    waiterIDfld.setText("");
+                    delimanidfld.setText("");
                 }
             }
         });

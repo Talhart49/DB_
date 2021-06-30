@@ -76,14 +76,19 @@ public class AddChef_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if (AddAll.AddChef(Integer.parseInt(idfld.getText()),namefld.getText(),
-                            numberfld.getText(),cnicfld.getText(), Integer.parseInt(experincefld.getText()))){
-                        JOptionPane.showMessageDialog(null,"Added");
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || cnicfld.getText().isBlank()
+                            || numberfld.getText().isBlank() || experincefld.getToolTipText().isBlank())) {
+                        if (AddAll.AddChef(Integer.parseInt(idfld.getText()), namefld.getText(),
+                                numberfld.getText(), cnicfld.getText(), Integer.parseInt(experincefld.getText()))) {
+                            JOptionPane.showMessageDialog(null, "Added");
 
+
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error, Please Enter Again");
+                        }
 
                     }
-                    else {
-                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                else{             JOptionPane.showMessageDialog(null, "Error, Please Fill all Fields");
                     }
                     idfld.setText("");
                     namefld.setText("");
@@ -91,7 +96,13 @@ public class AddChef_D extends JFrame {
                     cnicfld.setText("");
                     experincefld.setText("");
                 } catch (SQLException throwables) {
-                    JOptionPane.showMessageDialog(null,"Error, Please Enter Again");                }
+                    JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                    experincefld.setText("");
+                }
             }
         });
         Addbtn.setBounds(714, 643, 120, 29);

@@ -74,6 +74,7 @@ public class ADDFHD_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(foodidfld.getText().isBlank() || homeDeliIDfld.getText().isBlank() )){
                     if (AddAll.AddFHD(Integer.parseInt(foodidfld.getText()),
                             Integer.parseInt(homeDeliIDfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
@@ -83,6 +84,11 @@ public class ADDFHD_D extends JFrame {
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
 
+                    }
+
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
                     }
                     foodidfld.setText("");
                     homeDeliIDfld.setText("");

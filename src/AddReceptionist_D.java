@@ -77,26 +77,27 @@ public class AddReceptionist_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || numberfld.getText().isBlank()
+                            || cnicfld.getText().isBlank() || passwordfld.getText().isBlank())){
                     if (AddAll.AddReceptionist(Integer.parseInt(idfld.getText()),namefld.getText(),
                             numberfld.getText(),cnicfld.getText(),String.valueOf(passwordfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
-                        passwordfld.setText("");
 
 
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        namefld.setText("");
-                        numberfld.setText("");
-                        cnicfld.setText("");
-                        passwordfld.setText("");
                     }
-                } catch (SQLException throwables) {
+                    idfld.setText("");
+                    namefld.setText("");
+                    numberfld.setText("");
+                    cnicfld.setText("");
+                    passwordfld.setText("");
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
+                    }
+                }catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
             }

@@ -76,21 +76,26 @@ public class AddFood_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if (AddAll.Addfood(Integer.parseInt(idfld.getText()),namefld.getText(), Integer.parseInt(pricefld.getText()))){
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || pricefld.getText().isBlank()
+                          )){
+                    if (AddAll.Addfood(Integer.parseInt(idfld.getText()),namefld.getText(),
+                            Integer.parseInt(pricefld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
-                        idfld.setText("");
-                        namefld.setText("");
-                        pricefld.setText("");
 
 
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
-                        idfld.setText("");
-                        namefld.setText("");
-                        pricefld.setText("");
                     }
-                } catch (SQLException throwables) {
+                    idfld.setText("");
+                    namefld.setText("");
+                    pricefld.setText("");
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
+
+                    }
+                }catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
             }

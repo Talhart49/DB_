@@ -77,13 +77,20 @@ public class AddCustomer_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if( AddAll.Addcustomer (Integer.parseInt(idfld.getText()),namefld.getText(),numberfld.getText()
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || cnicfld.getText().isBlank()
+                            || numberfld.getText().isBlank() || delimanidfld.getToolTipText().isBlank())){
+                        if( AddAll.Addcustomer (Integer.parseInt(idfld.getText()),namefld.getText(),numberfld.getText()
                             ,cnicfld.getText(),Integer.parseInt(delimanidfld.getText()))){
                         JOptionPane.showMessageDialog(null,"Added");
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"Error Enter Again");
 
+                    }
+
+                }
+                else {
+                        JOptionPane.showMessageDialog(null,"Please Fill all fields");
                     }
                     idfld.setText("");
                     namefld.setText("");

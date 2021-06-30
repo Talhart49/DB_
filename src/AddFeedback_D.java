@@ -82,6 +82,8 @@ public class AddFeedback_D extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 {
                     try {
+                        if (!(ratingfld.getText().isBlank() || Commentfld.getText().isBlank() || foodidfld.getText().isBlank()
+                                || customeridfld.getText().isBlank())){
                         if (AddAll.Addfeedback(feedid,Integer.parseInt(ratingfld.getText()),Commentfld.getText(),
                                 Integer.parseInt(foodidfld.getText()),
                                 Integer.parseInt(customeridfld.getText()))){
@@ -92,6 +94,12 @@ public class AddFeedback_D extends JFrame {
                         }
                         else {
                             JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
+
+                        }
+
+                    }
+                    else {
+                            JOptionPane.showMessageDialog(null,"Error, Please fill all fields");
 
                         }
                         foodidfld.setText("");

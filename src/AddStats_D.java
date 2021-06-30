@@ -77,6 +77,8 @@ public class AddStats_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if (!(idfld.getText().isBlank() || soldfld.getText().isBlank() || satisfactionfld.getText().isBlank()
+                            || foodidfld.getText().isBlank() )){
                     if( AddAll.Addstats (Integer.parseInt(idfld.getText()), Integer.parseInt(soldfld.getText()),
                             Integer.parseInt(satisfactionfld.getText())
                             ,Integer.parseInt(foodidfld.getText()))){
@@ -90,7 +92,13 @@ public class AddStats_D extends JFrame {
                     soldfld.setText("");
                     satisfactionfld.setText("");
                     foodidfld.setText("");
-                } catch (SQLException throwables) {
+                }
+                else {
+
+                        JOptionPane.showMessageDialog(null,"Error please fill all fields");
+
+                    }
+                }catch (SQLException throwables) {
                     JOptionPane.showMessageDialog(null,"Error Enter Again");
                     idfld.setText("");
                     soldfld.setText("");

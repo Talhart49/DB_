@@ -88,13 +88,17 @@ public class AddAdmin_D extends JFrame {
         Addbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if (AddAll.AddAdmin(Integer.parseInt(idfld.getText()), namefld.getText(),
-                            cnicfld.getText(),emailfld.getText(),String.valueOf(passwordfld.getPassword()))){
-                        JOptionPane.showMessageDialog(null,"Added");
-                    }
-                    else {
-                        JOptionPane.showMessageDialog(null,"Error Enter Again");
+                    if (!(idfld.getText().isBlank() || namefld.getText().isBlank() || cnicfld.getText().isBlank()
+                            || emailfld.getText().isBlank() || passwordfld.getToolTipText().isBlank())) {
+                        if (AddAll.AddAdmin(Integer.parseInt(idfld.getText()), namefld.getText(),
+                                cnicfld.getText(), emailfld.getText(), String.valueOf(passwordfld.getPassword()))) {
+                            JOptionPane.showMessageDialog(null, "Added");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error Enter Again");
 
+                        }
+                    }
+                else {JOptionPane.showMessageDialog(null, "Error, Please Fill all Fields");
                     }
                     idfld.setText("");
                     emailfld.setText("");
@@ -103,6 +107,11 @@ public class AddAdmin_D extends JFrame {
                     passwordfld.setText("");
                 } catch (SQLException y) {
                     JOptionPane.showMessageDialog(null,"Error Enter Again");
+                    idfld.setText("");
+                    emailfld.setText("");
+                    namefld.setText("");
+                    cnicfld.setText("");
+                    passwordfld.setText("");
                 }
 
             }
