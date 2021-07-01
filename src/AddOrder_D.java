@@ -35,7 +35,7 @@ public class AddOrder_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);

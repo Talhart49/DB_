@@ -28,7 +28,7 @@ public class First_Page_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
@@ -38,7 +38,7 @@ public class First_Page_D extends JFrame {
         Plogin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\mainpageR.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("mainpageR.jpg"));
         backgroundlabel.setBounds(0, 0, 1370, 738);
 
 
@@ -85,7 +85,7 @@ public class First_Page_D extends JFrame {
 
 
         JLabel wholbl = new JLabel("Who Are You..!!!!");
-        wholbl.setIcon(new ImageIcon("F:\\DB I\\DB_project\\whoR.jpg"));
+        wholbl.setIcon(new ImageIcon("whoR.jpg"));
         wholbl.setForeground(new Color(255, 255, 255));
         wholbl.setFont(new Font("Tahoma", Font.PLAIN, 26));
         wholbl.setBounds(552, 219, 435, 129);

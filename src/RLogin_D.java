@@ -34,7 +34,7 @@ public class RLogin_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
@@ -44,7 +44,7 @@ public class RLogin_D extends JFrame {
         Plogin.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\loginR.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("loginR.jpg"));
         backgroundlabel.setBounds(0,0,1370, 749);
 
 
@@ -94,13 +94,7 @@ public class RLogin_D extends JFrame {
                     if (checkCredsQuery.executeUpdate() == 0) {
                         JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
 
-//                        PreparedStatement queryStatement = connection.prepareStatement("select * from admin");
-//
-//                        ResultSet result = queryStatement.executeQuery();
-//                        System.out.println("ID\tName\tphone\tname\tExperonece");
-//                        while (result.next()) {
-//                            System.out.println(result.getString(1) + "\t" + result.getString(2) + "\t" + result.getString(3) + "\t" + result.getString(4) +"\t" + result.getString(5));
-//                        }
+
 
                     } else {
                         JOptionPane.showMessageDialog(null,"Found");
@@ -113,30 +107,14 @@ public class RLogin_D extends JFrame {
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
                 }
 
-////                Sign_Upp s1=new Sign_Upp();
-//                String Lname=userfield.getText();
-//                String Lpassword=passwordField.getText();
-//                if (Lname.isBlank() && Lpassword.isBlank()){
-//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
-//                }
-//
-////                else if (Sign_Upp.Log_in(Lname,Lpassword)){
-//////                    dispose();
-//////                    OrderG orderG=new OrderG();
-//////                    orderG.setVisible(true);
-////                }
-//                else {
-//                    userfield.setText(" ");
-//                    passwordField.setText(" ");
-//                    JOptionPane.showMessageDialog(null,"Not Found, Enter Again");
-//                }
+
             }
         });
         Log_button.setBounds(613, 490, 123, 29);
         Plogin.add(Log_button);
 
         backbtn = new JButton("Back");
-        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
+        backbtn.setIcon(new ImageIcon("bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

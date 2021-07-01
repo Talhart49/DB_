@@ -29,7 +29,7 @@ public class Recep_Dashboard_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
@@ -39,7 +39,7 @@ public class Recep_Dashboard_D extends JFrame {
         Precep_Dashboard.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\dashR.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("dashR.jpg"));
         backgroundlabel.setBounds(0, 0, 1370, 749);
 
         AHomeDelibtn = new JButton("Home Delivery");
@@ -55,7 +55,7 @@ public class Recep_Dashboard_D extends JFrame {
         Precep_Dashboard.add(AHomeDelibtn);
 
         backbtn = new JButton("Back");
-        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
+        backbtn.setIcon(new ImageIcon("bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

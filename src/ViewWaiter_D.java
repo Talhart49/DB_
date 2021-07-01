@@ -34,7 +34,7 @@ public class ViewWaiter_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
@@ -44,7 +44,7 @@ public class ViewWaiter_D extends JFrame {
         PViewWaiter.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\view.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("view.jpg"));
         backgroundlabel.setBounds(0, 0, 1370, 749);
 
 
@@ -77,7 +77,7 @@ public class ViewWaiter_D extends JFrame {
         PViewWaiter.add(Searchbtn);
 
         backbtn = new JButton("Back");
-        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
+        backbtn.setIcon(new ImageIcon("bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

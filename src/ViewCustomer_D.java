@@ -30,7 +30,7 @@ public class ViewCustomer_D extends JFrame {
 
 
     private void initComponents() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\oop\\ramen.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("ramen.png"));
         setTitle("Ramen_Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1600, 800);
@@ -40,12 +40,12 @@ public class ViewCustomer_D extends JFrame {
         PView.setLayout(null);
 
         JLabel backgroundlabel = new JLabel("");
-        backgroundlabel.setIcon(new ImageIcon("F:\\DB I\\DB_project\\view.jpg"));
+        backgroundlabel.setIcon(new ImageIcon("view.jpg"));
         backgroundlabel.setBounds(0, 0, 1370, 749);
 
 
         backbtn = new JButton("Back");
-        backbtn.setIcon(new ImageIcon("F:\\DB I\\DB_project\\bckR.jpg"));
+        backbtn.setIcon(new ImageIcon("bckR.jpg"));
         backbtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
         backbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -106,13 +106,7 @@ public class ViewCustomer_D extends JFrame {
         catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error");   }
 
-//        JScrollPane scrollPane = new JScrollPane();
-//        scrollPane.setBounds(29, 362, 606, 263);
-//        PView.add(scrollPane);
-//
-//        JTextArea VtextArea = new JTextArea();
-//        scrollPane.setViewportView(VtextArea);
-//        VtextArea.setText(ViewAll.viewcustomer());
+
         PView.add(backgroundlabel);
         setLocationRelativeTo(null);
 
