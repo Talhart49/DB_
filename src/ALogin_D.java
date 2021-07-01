@@ -102,6 +102,8 @@ public class ALogin_D extends JFrame {
 
                     } else {
                         JOptionPane.showMessageDialog(null,"Found");
+                        Admin_Dashboard_D admin_dashboard_d=new Admin_Dashboard_D();
+                        admin_dashboard_d.setVisible(true);
                     }
 
                 } catch (SQLException em) {
