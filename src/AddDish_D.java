@@ -62,7 +62,7 @@ public class AddDish_D extends JFrame {
 
                     }
                     else {
-
+                        JOptionPane.showMessageDialog(null,"Error, Please Enter Again");
                     }
 
                 }

@@ -43,7 +43,7 @@ public class First_Page_D extends JFrame {
 
 
         admin_btn = new JButton("ADMIN");
-        admin_btn.setBackground(new Color(179, 141, 141));
+        admin_btn.setBackground(new Color(226, 222, 222));
         admin_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -57,7 +57,7 @@ public class First_Page_D extends JFrame {
         Plogin.add(admin_btn);
 
         JButton customer_btn = new JButton("Customer");
-        customer_btn.setBackground(new Color(179, 141, 141));
+        customer_btn.setBackground(new Color(226, 222, 222));
 //        customer_btn.setForeground();
         customer_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -71,7 +71,7 @@ public class First_Page_D extends JFrame {
         Plogin.add(customer_btn);
 
         JButton receptionist_btn = new JButton("Receptionist");
-        receptionist_btn.setBackground(new Color(179, 141, 141));
+        receptionist_btn.setBackground(new Color(226, 222, 222));
         receptionist_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
